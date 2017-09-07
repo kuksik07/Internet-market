@@ -6,3 +6,33 @@
     outline: none;
 }
 
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+ul{
+    font-size: 0;
+}
+
+body{
+    min-height: 100%;
+
+}
+
+.container{
+    width: 1000px;
+}
+
+.menu-top{
+    height: 70px;
+    margin: 0 -9999px;
+    padding: 0 9999px;
+    background-color: #0e1116;
+}
+
+.menu-top ul[
+    display: inline-block;
+
+]
