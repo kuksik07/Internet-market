@@ -109,5 +109,39 @@ a:hover{
     position: relative;
 }
 
+img{
+    width: 500px;
+    height: 500px;
+}
 
+.goods-header{
+    color: red;
+}
 
+.single-goods{
+    background: white;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.single-goods button{
+    display: block;
+    margin: 20px auto;
+}
+
+#mini-cart{
+    background: #dddddd;
+    margin: 20px;
+    width: auto;
+    height: auto;
+}
+
+#top_1{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}

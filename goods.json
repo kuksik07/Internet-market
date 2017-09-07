@@ -1,0 +1,74 @@
+{
+  "BBS 'SATIN'": {
+    "name":"BBS",
+    "cost": 1500,
+    "description": "Есть в наличии",
+    "image": "images/BBS/bbs_1.jpg"
+  },
+  "BBS 'WRX'": {
+  "name":"BBS",
+  "cost": 2200,
+  "description": "Есть в наличии",
+  "image": "images/BBS/bbs_2.jpg"
+  },
+  "BMW 'STOK'": {
+    "name":"BMW",
+    "cost": 2800,
+    "description": "Есть в наличии",
+    "image": "images/BMW/BMW_1.jpg"
+  },
+  "BMW 'REPLICE'": {
+    "name":"BMW",
+    "cost": 2600,
+    "description": "Есть в наличии",
+    "image": "images/BMW/BMW_2.jpg"
+  },
+  "Konig 'ULTRAFORM'": {
+    "name":"Konig",
+    "cost": 1000,
+    "description": "Есть в наличии",
+    "image": "images/Konig/Konig_1.png"
+  },
+  "Konig 'INTEGRAM'": {
+    "name":"Konig",
+    "cost": 1200,
+    "description": "Есть в наличии",
+    "image": "images/Konig/Konig_2.png"
+  },
+  "Mercedes 'INCH'": {
+    "name":"Mercedes",
+    "cost": 3000,
+    "description": "Есть в наличии",
+    "image": "images/Mercedes/MB_1.jpg"
+  },
+  "Mercedes 'STOK'": {
+    "name":"Mercedes",
+    "cost": 2800,
+    "description": "Есть в наличии",
+    "image": "images/Mercedes/MB_2.jpg"
+  },
+  "Velocity 'VW_20'": {
+    "name":"Velocity",
+    "cost": 1100,
+    "description": "Есть в наличии",
+    "image": "images/Velocity/VW_1.png"
+  },
+  "Velocity 'VW_287'": {
+    "name":"Velocity",
+    "cost": 1200,
+    "description": "Есть в наличии",
+    "image": "images/Velocity/VW_2.png"
+  },
+  "Volkswage 'SKU'": {
+    "name":"Volkswagen",
+    "cost": 800,
+    "description": "Есть в наличии",
+    "image": "images/VW/VW_1.jpg"
+  },
+  "Volkswagen 'Helix'": {
+    "name":"Volkswagen",
+    "cost": 1400,
+    "description": "Есть в наличии",
+    "image": "images/VW/VW_2.jpg"
+  }
+}
