@@ -15,7 +15,7 @@ $('document').ready(function () {
 });
 
 
-    function loadGoods() {
+function loadGoods() {
         //загружаю товары на страницу
         $.getJSON('goods.json',function (data) {
             // console.log(data);
@@ -46,7 +46,6 @@ function addToCart() {
 
     localStorage.setItem('cart',JSON.stringify(cart));
     showMiniCart();
-    // showMiniCart_2();
 }
 
 function checkCart() {
@@ -54,54 +53,34 @@ function checkCart() {
     if(localStorage.getItem('cart')!=null)
         cart=JSON.parse(localStorage.getItem('cart'));
 }
+
+
+function saveCartToLS() {
+    //сохраняю корзину в localStorage
+    localStorage.setItem('cart',JSON.stringify(cart));
+}
+
+
+
 function showMiniCart() {
     var out='';
 
     for(var key in cart){
-        out+=key+'---'+cart[key]+'<br>';
-        // out+=cart[key]+'<br>';
+        out+=key+'---'+cart[key];
+        out += '<button class="delete" data-art="' + key + '">x</button>'+'<br>';
     }
 
     $('#mini-cart').html(out);
 
-}
+    $(".delete").click(deleteGoods)
 
-// var hideTimes={};
-//
-//     function setVisiblity(visible) {
-//         if($("#mini-cart").css("display","none")==true)
-//         {
-//             // noinspection JSAnnotator
-//             continue;
-//         }
-//         // else
-//
-//
-//
-//
-//
-//     }
-//
-// // function setVisibility(objID,visible) {
-// //     var obj=document.getElementById(objID);
-// //     obj.style.visibility=(visible)?"visible":"";
-// // }
-//
-// function showMenu() {
-//     // debugger
-//     $("#mini-cart")
-//         .css("display","block")
-//         .css("background","red");
-//     // foo();
-// }
-//
-// function hideMenu() {
-//     $("#mini-cart").css("display","none");
-//     // foo();
-// }
-// // function foo() {
-// //     setTimeout(hideMenu,3000);
-// // }
+}
+function deleteGoods() {
+    var articul=$(this).attr('data-art');
+    delete cart[articul];
+    saveCartToLS();
+    showMiniCart();
+}
 var hideTimes={};
 
 function setVisibility(objID,visible) {
