@@ -5,31 +5,15 @@ $('document').ready(function () {
     loadGoods();
     checkCart();
     showMiniCart();
-    top_1();
+
+    $(".click").on('click', function() {
+        $("body").animate({"scrollTop": 0},'slow');
+        return false;
+    });
+    $("#out").mouseover(showMenu());
+    // $("#out").mouseout(hideMenu());
 });
-    function top_1() {
-        var scrolled;
-        var timer;
 
-        document.getElementById('top_1').onclick=function () {
-            scrolled=window.pageYOffset;
-            scrollToTop();
-            // window.scrollTo(0,0);
-        };
-
-    function scrollToTop() {
-        if(scrolled>0)
-        {
-            window.scrollTo(0,scrolled);
-            scrolled=scrolled-100;//скорость прокрутки
-            timer=setTimeout(scrollToTop,500);
-        }
-        else {
-            clearTimeout(timer);
-            window.scrollTo(0,0);
-        }
-    }
-}
 
     function loadGoods() {
         //загружаю товары на страницу
@@ -78,15 +62,61 @@ function showMiniCart() {
         // out+=cart[key]+'<br>';
     }
 
-
-    out+='<a href="cart">Корзина</a>';
     $('#mini-cart').html(out);
 
 }
-// function showMiniCart_2() {
-//     var out='';
+
+// var hideTimes={};
 //
-//     for(var key in cart)
-//         out+=cart[key]+'<br>';
-//     $("a").html(out);
+//     function setVisiblity(visible) {
+//         if($("#mini-cart").css("display","none")==true)
+//         {
+//             // noinspection JSAnnotator
+//             continue;
+//         }
+//         // else
+//
+//
+//
+//
+//
+//     }
+//
+// // function setVisibility(objID,visible) {
+// //     var obj=document.getElementById(objID);
+// //     obj.style.visibility=(visible)?"visible":"";
+// // }
+//
+// function showMenu() {
+//     // debugger
+//     $("#mini-cart")
+//         .css("display","block")
+//         .css("background","red");
+//     // foo();
 // }
+//
+// function hideMenu() {
+//     $("#mini-cart").css("display","none");
+//     // foo();
+// }
+// // function foo() {
+// //     setTimeout(hideMenu,3000);
+// // }
+var hideTimes={};
+
+function setVisibility(objID,visible) {
+    var obj=document.getElementById(objID);
+    obj.style.visibility=(visible)?"visible":"";
+}
+
+function showMenu(objID) {
+    setVisibility(objID,true);
+    clearTimeout(hideTimes[objID]);
+
+}
+
+function hideMenu(objID) {
+    // setVisibility(objID,false);
+    var cmd="setVisibility('"+objID+"', false)";
+    hideTimes[objID]=setTimeout(cmd,1000);
+}
