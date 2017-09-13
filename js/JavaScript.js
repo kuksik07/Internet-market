@@ -5,8 +5,14 @@ $('document').ready(function () {
     loadGoods();
     checkCart();
     showMiniCart();
-
-    $(".click").on('click', function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.scroll-top').fadeIn("slow");
+        } else {
+            $('.scroll-top').fadeOut("slow");
+        }
+    });
+    $(".scroll-top").on('click', function() {
         $("body").animate({"scrollTop": 0},'slow');
         return false;
     });
@@ -14,16 +20,25 @@ $('document').ready(function () {
     // $("#out").mouseout(hideMenu());
 });
 
-
 function loadGoods() {
         //загружаю товары на страницу
         $.getJSON('goods.json',function (data) {
-            // console.log(data);
+            console.log(data);
+            var stars=0;
+            var rating=0;
             var out='';
             for(var key in data)
         {
             out+='<div class="single-goods">';
             out+='<p class="goods-header">'+key+'</p>';
+            stars=data[key].rating*20;
+            out+='<p>'+stars+'</p>';
+            out+='<div class="rating">';
+                out+='<div class="rating-progress">';
+                out+='</div>';
+                out+='<div class="stars">';
+                out+='</div>';
+            out+='</div>';
             out+='<p>Цена: '+data[key].cost+'</p>';
             out+='<img src="'+data[key].image+'">';
             out+='<button class="add-to-cart" data-art="'+key+'">Купить</button>';
@@ -32,6 +47,7 @@ function loadGoods() {
         }
         $('#goods').html(out);
         $('button.add-to-cart').click(addToCart);
+
     })
 }
 
@@ -59,8 +75,6 @@ function saveCartToLS() {
     //сохраняю корзину в localStorage
     localStorage.setItem('cart',JSON.stringify(cart));
 }
-
-
 
 function showMiniCart() {
     var out='';
