@@ -27,7 +27,7 @@ $.getJSON('goods.json', function (data) {
             for(var key in cart)
             {
                 out+='<div class="single-goods">';
-                out+='<p class="goods-header">'+key+'</p><span><button class="delete" data-art="' + key + '">x</button></span>';
+                out+='<p class="goods-header">'+key+'</p><span><button class="delete" data-art="' + key + '">✖</button></span>';
                 out+='<p>Цена: '+goods[key].cost+'</p>';
                 out+='<img src="'+goods[key].image+'">';
                 out+='<p>'+goods[key].description;

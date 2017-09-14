@@ -24,7 +24,9 @@ html, body{
 }
 
 body{
-    background-color: #f0f0f0;
+    background: #f0f0f0 url("../images/disk_icon1.svg") repeat;
+    background-size: 10%;
+    background-attachment: fixed;
     font-family: "OpenSansRegular", sans-serif;
 }
 
@@ -36,8 +38,15 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+a:hover, button:hover{
     cursor: pointer;
+}
+
+button{
+    vertical-align: middle;
+    background: none;
+    border: 0;
+    border-radius: 0;
 }
 
 .content-block{
@@ -57,6 +66,24 @@ a:hover{
     z-index: 999;
 }
 
+.menu-top a{
+    padding: 0 20px;
+}
+
+.menu-logo{
+    display: none;
+}
+
+.menu-logo a{
+    line-height: 40px;
+    border-right: 1px solid rgba(255,255,255,.5);
+
+}
+
+.menu-logo img{
+    vertical-align: middle;
+}
+
 .menu-top ul{
     width: 1000px;
     margin: 0 auto;
@@ -64,6 +91,7 @@ a:hover{
 
 .menu-top a, .menu-top ul li{
     display: inline-block;
+    vertical-align: middle;
 }
 
 .menu-top a, .menu-top p{
@@ -71,13 +99,13 @@ a:hover{
     color: #fff;
 }
 
-.menu-top a{
+.menu-top ul li a{
     line-height: 57px;
-    padding: 0 20px;
     border-bottom: 3px solid transparent;
 }
 
-.menu-top a:hover{
+
+.menu-top ul li a:hover{
     color: #f0f0f0;
     border-bottom: 3px #ffb204 solid;
 }
@@ -91,7 +119,7 @@ a:hover{
     margin: 10px 0;
 }
 
-.basket a, .single-goods button{
+.basket a, .add-to-cart{
     padding: 0 20px;
     border-radius: 20px;
     color: #000;
@@ -108,23 +136,30 @@ a:hover{
     font-weight: bold;
 }
 
-.basket a:hover, .single-goods button:hover{
+.basket a:hover, .add-to-cart:hover{
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
     color: inherit;
 }
 
 .banner{
-    margin: 60px 0 10px;
+    margin-bottom: 20px;
     width: 100%;
     text-align: center;
     background-color: #fff;
+    border-bottom: 3px rgba(14, 17, 22, 0.9) solid;
+    height: 460px;
+    z-index: -2;
 }
 
-.banner img{
+.banner-img{
     width: 1000px;
-    height: 400px;
-    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    background: url("../images/banner2.jpg") no-repeat center;
+    background-attachment: fixed;
+    background-position-y: 60px;
+    z-index: -1;
 }
 
 .single-goods{
@@ -138,6 +173,7 @@ a:hover{
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
     line-height: 1.5em;
+    position: relative;
 }
 
 .single-goods:nth-of-type(3n+2){
@@ -219,7 +255,7 @@ a:hover{
     height: 0;
 }
 
-.kolvo input{
+.kolvo input, .minus+span{
     width: 100px;
     line-height: 25px;
     box-shadow: none;
@@ -227,39 +263,43 @@ a:hover{
     text-align: center;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 3px;
-    margin: 5px 10px 20px;
+    margin: 5px 0 20px;
+    display: inline-block;
 }
 
-
-.kolvo::before{
-    content: '-';
+.minus+span{
+    border: 0;
 }
 
-.kolvo::after{
-    content: '+';
-}
-
-.kolvo::before,.kolvo::after{
+.minus, .plus, .delete{
     color: #ffb204;
     font-weight: bold;
-    font-size: 24px;
-    display: inline-block;
-    width: 25px;
+    font-size: 20px;
     line-height: 25px;
-    vertical-align: middle;
+    height: 40px;
+    width: 40px;
+
 }
 
-.kolvo:hover::before,.kolvo:hover::after{
-    cursor: pointer;
+.delete{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 4;
 }
 
-.single-goods button{
+.delete:hover{
+    transform: rotate(360deg);
+    transform-origin: center center;
+    transition: 1s;
+}
+
+.single-goods .add-to-cart{
     font-size: 14px;
     line-height: 2.8em;
     font-weight: bold;
+    display: inline-block;
 }
-
-
 
 .scroll-top {
     position: fixed;
@@ -282,6 +322,19 @@ a:hover{
     background: linear-gradient(to bottom, rgba(255,255,255, 0.5), rgba(255,255,255, 0));
     color: rgba(255, 178, 4, 1);
 }
+
+/*.paralelogram{*/
+    /*-webkit-transform: skewY(-1deg);*/
+    /*-moz-transform: skewY(-1deg);*/
+    /*-o-transform: skewY(-1deg);*/
+/*}*/
+
+/*.banner-img{*/
+    /*-webkit-transform: skewY(1deg);*/
+    /*-moz-transform: skewY(1deg);*/
+    /*-o-transform: skewY(1deg);*/
+/*}*/
+
 
 /*@media screen and (max-width: 1325px){*/
     /*html,body{*/

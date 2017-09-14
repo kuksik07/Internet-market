@@ -12,6 +12,15 @@ $('document').ready(function () {
             $('.scroll-top').fadeOut("slow");
         }
     });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 390) {
+            $('.menu-logo').css("display", "inline-block");
+            $('.menu-top .home').css("display", "none");
+        } else{
+            $('.menu-logo').css("display", "none");
+            $('.menu-top .home').css("display", "inline-block");
+        }
+    });
     $(".scroll-top").on('click', function() {
         $("body").animate({"scrollTop": 0},'slow');
         return false;
@@ -46,7 +55,9 @@ function loadGoods() {
             out+='</div>';
             out+='<p class="cost">Цена: '+data[key].cost+'</p>';
             out+='<img src="'+data[key].image+'">';
-            out+='<div class="kolvo"><input type="text" placeholder="Кол-во"></div>'
+            out+='<div class="kolvo"><button class="minus" data-art="\' + key + \'">-</button>' +
+                '<input type="text" placeholder="Кол-во">' +
+                '<button class="plus" data-art="\' + key + \'">+</button></div>'
             out+='<button class="add-to-cart" data-art="'+key+'">Купить</button>';
             out+='<p>'+data[key].description+'</p>';
             out+='<span>'+data[key].count+'</span>'+'</p>';
