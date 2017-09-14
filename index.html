@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/JavaScript.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
     <div class="menu-top">
@@ -19,10 +19,7 @@
             <li><a href="#">О нас</a></li>
             <li><a href="#">Контакты</a></li>
             <div class="basket">
-                <a id="out" href=""
-                   onmouseover="showMenu('mini-cart')"
-                   onmouseout="hideMenu('mini-cart')"
-                >Корзина: <span>0 шт.</span></a>
+                <a id="out" href="cart.html">Корзина: <span><span id="mini-cart"></span> шт.</span></a>
             </div>
             <div class="phone">
                 <p>+38 (099) 905-20-70</p>
@@ -34,10 +31,6 @@
         <img src="images/banner2.jpg" alt="banner">
     </div>
 <div class="content-block">
-    <div id="mini-cart"
-         onmouseover="showMenu('mini-cart')"
-         onmouseout="hideMenu('mini-cart')"
-    ></div>
     <div id="goods"></div>
 </div>
     <div class="scroll-top">Наверх ▲</div>

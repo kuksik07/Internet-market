@@ -49,6 +49,7 @@ function loadGoods() {
             out+='<div class="kolvo"><input type="text" placeholder="Кол-во"></div>'
             out+='<button class="add-to-cart" data-art="'+key+'">Купить</button>';
             out+='<p>'+data[key].description+'</p>';
+            out+='<span>'+data[key].count+'</span>'+'</p>';
             out+='</div>';
             k++;
         }
@@ -57,8 +58,17 @@ function loadGoods() {
     })
 }
 
+function s(cart) {
+    var count = 0;
+    for(key in cart) {
+        count += cart[key];
+    }
+    return count;
+}
+
 function addToCart() {
     //Добавляем товары в корзину
+    var counter;
     var articul=$(this).attr('data-art');
 
     if(cart[articul]!=undefined)
@@ -66,7 +76,24 @@ function addToCart() {
     else
         cart[articul]=1;
 
-    localStorage.setItem('cart',JSON.stringify(cart));
+
+    $.getJSON('goods.json',function (data) {
+        for (var key in data)
+        {
+            counter=data[articul].count;
+        }
+
+        if(counter<cart[articul])
+        {
+            alert("Вы выбрали больше дисков, чем на складе");
+            cart[articul]=counter;
+            localStorage.setItem('cart',JSON.stringify(cart));
+            showMiniCart();
+        }
+    });
+
+
+    saveCartToLS();
     showMiniCart();
 }
 
@@ -83,24 +110,18 @@ function saveCartToLS() {
 }
 
 function showMiniCart() {
-    var out='';
+    var out = '';
+    if (s(cart)<=100)
+        out += s(cart);
 
-    for(var key in cart){
-        out+=key+'---'+cart[key];
-        out += '<button class="delete" data-art="' + key + '">x</button>'+'<br>';
-    }
+    else
+        out+="100+";
 
     $('#mini-cart').html(out);
-
-    $(".delete").click(deleteGoods)
-
 }
-function deleteGoods() {
-    var articul=$(this).attr('data-art');
-    delete cart[articul];
-    saveCartToLS();
-    showMiniCart();
-}
+
+
+
 var hideTimes={};
 
 function setVisibility(objID,visible) {

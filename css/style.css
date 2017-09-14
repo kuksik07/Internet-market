@@ -259,14 +259,7 @@ a:hover{
     font-weight: bold;
 }
 
-#mini-cart{
-    background: #ddd;
-    margin: 20px;
-    width: 250px;
-    height: auto;
-    visibility: hidden;
-    /*float: right;*/
-}
+
 
 .scroll-top {
     position: fixed;
