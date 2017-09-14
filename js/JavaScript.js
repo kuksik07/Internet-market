@@ -5,7 +5,6 @@ $('document').ready(function () {
     loadGoods();
     checkCart();
     showMiniCart();
-    setStars();
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('.scroll-top').fadeIn("slow");
@@ -22,25 +21,36 @@ $('document').ready(function () {
 function loadGoods() {
         //загружаю товары на страницу
         $.getJSON('goods.json',function (data) {
-            var stars=0;
-            var rating=0;
+
+            var count=1;
             var out='';
+            var k=1;
             for(var key in data)
         {
             out+='<div class="single-goods">';
-            out+='<p class="goods-header">'+key+'</p>';
-            out+='<p>'+data[key].rating*20+'</p>';
+            out+='<p class="goods-header">'+key+'</p><br>';
+            stars=data[key].rating;
+            count=0;
             out+='<div class="rating">';
-                out+='<div class="rating-progress">';
-                out+='</div>';
-                out+='<div class="stars">';
-                out+='</div>';
+            while(count<5){
+                if(stars!=0) {
+                    out+='<div class="star-color"></div>';
+                    stars--;
+                    ++count;
+                }
+                if(stars==0&&count!=5){
+                    out+='<div class="star-empty"></div>';
+                    ++count;
+                }
+            }
             out+='</div>';
-            out+='<p>Цена: '+data[key].cost+'</p>';
+            out+='<p class="cost">Цена: '+data[key].cost+'</p>';
             out+='<img src="'+data[key].image+'">';
+            out+='<div class="kolvo"><input type="text" placeholder="Кол-во"></div>'
             out+='<button class="add-to-cart" data-art="'+key+'">Купить</button>';
             out+='<p>'+data[key].description+'</p>';
             out+='</div>';
+            k++;
         }
         $('#goods').html(out);
         $('button.add-to-cart').click(addToCart);
@@ -58,30 +68,6 @@ function addToCart() {
 
     localStorage.setItem('cart',JSON.stringify(cart));
     showMiniCart();
-}
-
-
-
-function setStars() {
-    var stars=0;
-    var coun=0;
-    $.getJSON('goods.json',function (data) {
-        for(var key in data){
-                stars=data[key].rating*20;
-
-            console.log(stars);
-
-                // console.log(stars);
-                // foo(key);
-                coun++;
-                for(var i=1;i<=12;i++)
-                    $(".rating-progress:nth-child(1)").css("width",stars+'%');
-        }
-
-
-
-    });
-
 }
 
 function checkCart() {
