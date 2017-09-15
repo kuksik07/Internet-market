@@ -2,96 +2,96 @@
   "BBS 'SATIN'": {
     "name":"BBS",
     "rating":4,
-    "cost": 1500,
-    "description": "Есть в наличии",
+    "cost": 375,
+    "description": "Есть в наличии ",
     "count":20,
     "image": "images/BBS/bbs_1.jpg"
   },
   "BBS 'WRX'": {
-  "name":"BBS",
-  "rating":5,
-  "cost": 2200,
-  "description": "Есть в наличии",
-  "count":15,
-  "image": "images/BBS/bbs_2.jpg"
+    "name":"BBS",
+    "rating":5,
+    "cost": 550,
+    "description": "Есть в наличии ",
+    "count":15,
+    "image": "images/BBS/bbs_2.jpg"
   },
   "BMW 'STOK'": {
     "name":"BMW",
     "rating":5,
-    "cost": 2800,
-    "description": "Есть в наличии",
+    "cost": 700,
+    "description": "Есть в наличии ",
     "count":32,
     "image": "images/BMW/BMW_1.jpg"
   },
   "BMW 'REPLICE'": {
     "name":"BMW",
     "rating":5,
-    "cost": 2600,
-    "description": "Есть в наличии",
+    "cost": 650,
+    "description": "Есть в наличии ",
     "count":24,
     "image": "images/BMW/BMW_2.jpg"
   },
   "Konig 'ULTRAFORM'": {
     "name":"Konig",
     "rating":5,
-    "cost": 1000,
-    "description": "Есть в наличии",
+    "cost": 500,
+    "description": "Есть в наличии ",
     "count":30,
     "image": "images/Konig/Konig_1.png"
   },
   "Konig 'INTEGRAM'": {
     "name":"Konig",
     "rating":4,
-    "cost": 1200,
-    "description": "Есть в наличии",
+    "cost": 400,
+    "description": "Есть в наличии ",
     "count":24,
     "image": "images/Konig/Konig_2.png"
   },
   "Mercedes 'INCH'": {
     "name":"Mercedes",
     "rating":5,
-    "cost": 3000,
-    "description": "Есть в наличии",
+    "cost": 750,
+    "description": "Есть в наличии ",
     "count":32,
     "image": "images/Mercedes/MB_1.jpg"
   },
   "Mercedes 'STOK'": {
     "name":"Mercedes",
     "rating":5,
-    "cost": 2800,
-    "description": "Есть в наличии",
+    "cost": 700,
+    "description": "Есть в наличии ",
     "count":24,
     "image": "images/Mercedes/MB_2.jpg"
   },
   "Velocity 'VW_20'": {
     "name":"Velocity",
     "rating":4,
-    "cost": 1100,
-    "description": "Есть в наличии",
+    "cost": 275,
+    "description": "Есть в наличии ",
     "count":26,
     "image": "images/Velocity/VW_1.png"
   },
   "Velocity 'VW_287'": {
     "name":"Velocity",
     "rating":3,
-    "cost": 1200,
-    "description": "Есть в наличии",
+    "cost": 300,
+    "description": "Есть в наличии ",
     "count":22,
     "image": "images/Velocity/VW_2.png"
   },
   "Volkswagen 'SKU'": {
     "name":"Volkswagen",
     "rating":3,
-    "cost": 800,
-    "description": "Есть в наличии",
+    "cost": 200,
+    "description": "Есть в наличии ",
     "count":36,
     "image": "images/VW/VW_1.jpg"
   },
   "Volkswagen 'Helix'": {
     "name":"Volkswagen",
     "rating":4,
-    "cost": 1400,
-    "description": "Есть в наличии",
+    "cost": 350,
+    "description": "Есть в наличии ",
     "count":40,
     "image": "images/VW/VW_2.jpg"
   }

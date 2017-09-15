@@ -273,6 +273,11 @@ button{
 .minus+span{
     border: 0;
 }
+.items, .outText, .outCount{
+    font-size: 15px;
+    color: rgba(0,0,0,0.7);
+}
+
 
 .minus, .plus, .delete{
     color: #ffb204;

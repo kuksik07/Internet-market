@@ -30,16 +30,17 @@ $('document').ready(function () {
 });
 
 function loadGoods() {
-        //загружаю товары на страницу
-        $.getJSON('goods.json',function (data) {
+    //загружаю товары на страницу
+    $.getJSON('goods.json',function (data) {
 
-            var count=1;
-            var out='';
-            var k=1;
-            for(var key in data)
+        var count=1;
+        var out='';
+        var p='';
+        p=parseInt(p);
+        for(var key in data)
         {
             out+='<div class="single-goods">';
-            out+='<p class="goods-header">'+key+'</p><br>';
+            out+='<p class="goods-header" data-id="${id}">'+key+'</p><br>';
             stars=data[key].rating;
             count=0;
             out+='<div class="rating">';
@@ -54,20 +55,110 @@ function loadGoods() {
                     ++count;
                 }
             }
+
+            p=cart[key];
+
+            if(p==undefined)
+                p='Кол-во';
+
+
+
             out+='</div>';
             out+='<p class="cost">Цена: '+data[key].cost+'</p>';
             out+='<img src="'+data[key].image+'">';
-            out+='<div class="kolvo"><button class="minus" data-art="\' + key + \'">-</button>' +
-                '<input type="text" placeholder="Кол-во">' +
-                '<button class="plus" data-art="\' + key + \'">+</button></div>'
-            out+='<button class="add-to-cart" data-art="'+key+'">Купить</button>';
-            out+='<p>'+data[key].description+'</p>';
-            out+='<span>'+data[key].count+'</span>'+'</p>';
+            out+='<div class="kolvo"><button class="minus" data-art="'+ key +'">-</button>' +
+                '<span class="items">'+p+'</span>' +
+                '<button class="plus" data-art="'+ key +'">+</button></div>';
+            out+='<button class="add-to-cart" data-art="'+key+'" >Купить</button>';
+            out+='<p></p>'+'<span class="outText">'+data[key].description+
+                 '<span>'+data[key].count+'</span>'+'</p>';
             out+='</div>';
-            k++;
         }
+
+
+
         $('#goods').html(out);
         $('button.add-to-cart').click(addToCart);
+        $(".kolvo .plus").click(plusGoods);
+        $(".kolvo .minus").click(minusGoods);
+
+        function plusGoods(e) {
+            //добавляем по 1 товару
+
+            var counter;
+            var element = e.target;
+            var articul = $(this).attr('data-art');
+
+            if((cart[articul]!=null)) {
+                cart[articul]++;
+            }
+            else{
+                cart[articul]=1;
+            }
+
+
+
+            $.getJSON('goods.json', function (data) {
+                for (var key in data)
+                    counter = data[articul].count;
+
+                if (counter < cart[articul]) {
+                    alert("Вы выбрали больше дисков, чем на складе");
+                    cart[articul] = counter;
+                    saveCartToLS();
+                    loadGoods();
+                    showMiniCart();
+                }
+            });
+
+
+            saveCartToLS();
+            loadGoods();
+            showMiniCart();
+
+            function inputType() {
+
+                for(var key in cart) {
+                    if (articul == key) {
+                        $(element).siblings(1).val(cart[articul]);
+                    }
+
+                }
+            }
+            inputType();
+
+        }
+
+        function minusGoods(e) {
+            //убираем по 1 товару
+            var articul=$(this).attr('data-art');
+            var element = e.target;
+
+            if(cart[articul]>1)
+            {
+                cart[articul]--;
+                function inputType() {
+
+                    for (var key in cart) {
+
+                        if (articul == key) {
+                            $(element).siblings(1).val(cart[articul]);
+                        }
+                    }
+                }
+
+                inputType();
+            }
+            else
+            {
+                delete cart[articul];
+                $(element).siblings(1).val('');
+            }
+
+            saveCartToLS();
+            loadGoods();
+            showMiniCart();
+        }
     })
 }
 
@@ -79,10 +170,11 @@ function s(cart) {
     return count;
 }
 
-function addToCart() {
+function addToCart(e) {
     //Добавляем товары в корзину
     var counter;
     var articul=$(this).attr('data-art');
+    var element = e.target;
 
     if(cart[articul]!=undefined)
         cart[articul]++;
@@ -107,6 +199,7 @@ function addToCart() {
 
 
     saveCartToLS();
+    loadGoods();
     showMiniCart();
 }
 
