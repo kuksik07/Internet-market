@@ -14,8 +14,10 @@ $('document').ready(function () {
     });
     $(window).scroll(function() {
         if ($(this).scrollTop() > 390) {
-            $('.menu-logo').css("display", "inline-block");
+            var p=$(this).scrollTop();
+            console.log(p);
             $('.menu-top .home').css("display", "none");
+            $('.menu-logo').css("display", "inline-block");
         } else{
             $('.menu-logo').css("display", "none");
             $('.menu-top .home').css("display", "inline-block");
