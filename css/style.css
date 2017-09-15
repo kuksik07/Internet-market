@@ -153,13 +153,14 @@ button{
 }
 
 .banner-img{
-    width: 1000px;
+    min-width: 1000px;
     height: 100%;
     margin: 0 auto;
-    background: url("../images/banner2.jpg") no-repeat center;
+    background: url("../images/banner4.jpg") no-repeat center;
     background-attachment: fixed;
     background-position-y: 60px;
     z-index: -1;
+
 }
 
 .single-goods{
@@ -169,9 +170,9 @@ button{
     text-align: center;
     padding: 20px 0;
     border-radius: 3px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,.75);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
     line-height: 1.5em;
     position: relative;
 }
