@@ -17,9 +17,14 @@ $.getJSON('goods.json', function (data) {
         //загружаю товары на страницу
         if($.isEmptyObject(cart)) {
             //Корзина пуста
-            var out='Корзина пуста. Добавьте диски в корзину <a href="index.html">Главная страница</a>';
+            var out='<div class="sad-icon"></div>' +
+                'Корзина пуста. Добавьте товар в корзину <br><a href="index.html">Главная страница</a>';
+
             $(".my-cart").html(out);
+            $("#price").html('0');
             $(".price").html('');
+            $(".cost").css("display","none");
+
         }
         else {
             var out='';
@@ -46,13 +51,11 @@ $.getJSON('goods.json', function (data) {
                 rezu+=rezalt[i];
 
             $(".my-cart").html(out);
-
             $(".plus").click(plusGoods);
             $(".minus").click(minusGoods);
             $(".delete").click(deleteGoods);
+            $("#price").html(rezu);
             $(".price").html(rezu);
-
-
         }
     }
     function plusGoods() {

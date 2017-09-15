@@ -17,10 +17,10 @@ $('document').ready(function () {
             var p=$(this).scrollTop();
             console.log(p);
             $('.menu-top .home').css("display", "none");
-            $('.menu-logo').css("display", "inline-block");
+            $('.menu-logo-home').css("display", "inline-block");
         } else{
-            $('.menu-logo').css("display", "none");
             $('.menu-top .home').css("display", "inline-block");
+            $('.menu-logo-home').css("display", "none");
         }
     });
     $(".scroll-top").on('click', function() {

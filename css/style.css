@@ -19,7 +19,6 @@
 }
 
 html, body{
-    height: 100%;
     width: 100%;
 }
 
@@ -70,17 +69,20 @@ button{
     padding: 0 20px;
 }
 
-.menu-logo{
+.menu-logo-home{
     display: none;
 }
 
-.menu-logo a{
-    line-height: 40px;
-    border-right: 1px solid rgba(255,255,255,.5);
-
+.menu-logo-other{
+    display: inline-block;
 }
 
-.menu-logo img{
+.menu-logo-home a, .menu-logo-other a{
+    line-height: 40px;
+    border-right: 1px solid rgba(255,255,255,.5);
+}
+
+.menu-logo-home img, .menu-logo-other img{
     vertical-align: middle;
 }
 
@@ -224,7 +226,7 @@ button{
     background-size: 100%;
 }
 
-.single-goods p:first-child::after, .single-goods p:first-child::before{
+.goods-header::after, .goods-header::before{
     content: ' ';
     display: inline-block;
     vertical-align: middle;
@@ -232,11 +234,11 @@ button{
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.single-goods p:first-child::after{
+.goods-header::after{
     margin-left: 10px;
 }
 
-.single-goods p:first-child::before{
+.goods-header::before{
     margin-right: 10px;
 }
 
@@ -322,6 +324,44 @@ button{
 .scroll-top:hover{
     background: linear-gradient(to bottom, rgba(255,255,255, 0.5), rgba(255,255,255, 0));
     color: rgba(255, 178, 4, 1);
+}
+
+.my-cart{
+    text-align: center;
+    margin: 80px auto 0;
+    line-height: 2em;
+}
+
+.my-cart{
+    margin: 20px 0 0;
+}
+
+.my-cart a{
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid;
+}
+
+.my-cart a:hover{
+    border: 0;
+}
+
+.sad-icon{
+    width: 100px;
+    height: 100px;
+    margin: calc(50% - 280px) auto 20px;
+    background: url("../images/sad.svg") no-repeat center;
+}
+
+.cart-header{
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.price{
+    text-align: center;
 }
 
 /*.paralelogram{*/
