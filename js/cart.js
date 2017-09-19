@@ -24,7 +24,7 @@ $.getJSON('goods.json', function (data) {
             $("#price").html('0');
             $(".price").html('');
             $(".cost").css("display","none");
-
+            $(".form").html('');
         }
         else {
             var out='';

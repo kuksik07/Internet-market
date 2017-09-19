@@ -387,4 +387,63 @@ button{
         /*overflow-x: hidden;*/
     /*}*/
 /*}*/
+.content-block .form, .brend{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.form{
+    float: left;
+}
+.brend{
+    float: right;
+    width: 520px;
+    height: auto;
+    background: white;
+    /*border: 1px solid rgba(0,0,0,0.1);*/
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,.75);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
+    line-height: 1.5em;
+    position: relative;
+}
 
+.inp {
+    width: 400px;
+    height: 45px;
+    resize: none;
+    margin-bottom: 10px;
+    /*background: transparent;*/
+}
+
+#txt5{
+    height: 100px;
+}
+/*.block-3 textarea::-webkit-input-placeholder{*/
+    /*color: #a6a4ab;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-size: 15px;*/
+/*}*/
+
+.form textarea{
+    color: #a6a4ab;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding-top: 12px;
+}
+
+.brendimg{
+    margin: 10px;
+}
+
+.form input{
+    padding: 10px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #ffb204;
+    border: 1px solid transparent;
+}
+
+/*.brendimg:nth-child(1),.brendimg:nth-child(2),.brendimg:nth-child(3),.brendimg:nth-child(4){*/
+    /*border-bottom: 1px solid silver;*/
+/*}*/

@@ -1,4 +1,20 @@
 {
+  "Audi 'STOK'": {
+    "name":"Audi",
+    "rating":5,
+    "cost": 740,
+    "description": "Есть в наличии ",
+    "count":20,
+    "image": "images/Audi/Rs6.jpg"
+  },
+  "Audi 'CLASSIC'": {
+    "name":"Audi",
+    "rating":4,
+    "cost": 600,
+    "description": "Есть в наличии ",
+    "count":26,
+    "image": "images/Audi/S8.jpg"
+  },
   "BBS 'SATIN'": {
     "name":"BBS",
     "rating":4,
@@ -18,7 +34,7 @@
   "BMW 'STOK'": {
     "name":"BMW",
     "rating":5,
-    "cost": 700,
+    "cost": 720,
     "description": "Есть в наличии ",
     "count":32,
     "image": "images/BMW/BMW_1.jpg"
@@ -47,6 +63,14 @@
     "count":24,
     "image": "images/Konig/Konig_2.png"
   },
+  "Mazda 'CITY'": {
+    "name":"Mazda",
+    "rating":4,
+    "cost": 450,
+    "description": "Есть в наличии ",
+    "count":30,
+    "image": "images/Mazda/Mazda_1.jpg"
+  },
   "Mercedes 'INCH'": {
     "name":"Mercedes",
     "rating":5,
@@ -63,6 +87,62 @@
     "count":24,
     "image": "images/Mercedes/MB_2.jpg"
   },
+  "Nissan 'SPORT'": {
+  "name":"Nissan",
+  "rating":5,
+  "cost": 700,
+  "description": "Есть в наличии ",
+  "count":32,
+  "image": "images/Nissan/GTR_1.png"
+  },
+  "Nissan 'CITY'": {
+    "name":"Nissan",
+    "rating":4,
+    "cost": 550,
+    "description": "Есть в наличии ",
+    "count":28,
+    "image": "images/Nissan/GTR_2.png"
+  },
+  "Opel 'STOK'": {
+    "name":"Opel",
+    "rating":3,
+    "cost": 300,
+    "description": "Есть в наличии ",
+    "count":22,
+    "image": "images/Opel/Opel_1.png"
+  },
+  "Opel 'ADAPT'": {
+    "name":"Opel",
+    "rating":4,
+    "cost": 450,
+    "description": "Есть в наличии ",
+    "count":28,
+    "image": "images/Opel/Opel_2.jpg"
+  },
+  "OZ 'RACING'": {
+    "name":"OZ",
+    "rating":5,
+    "cost": 600,
+    "description": "Есть в наличии ",
+    "count":40,
+    "image": "images/OZ/OZ_1.jpg"
+  },
+  "OZ 'TURISMO'": {
+    "name":"OZ",
+    "rating":4,
+    "cost": 500,
+    "description": "Есть в наличии ",
+    "count":34,
+    "image": "images/OZ/OZ_2.png"
+  },
+  "Toyota 'STOK'": {
+    "name":"Toyota",
+    "rating":4,
+    "cost": 300,
+    "description": "Есть в наличии ",
+    "count":32,
+    "image": "images/Toyota/Toyota_1.jpg"
+  },
   "Velocity 'VW_20'": {
     "name":"Velocity",
     "rating":4,
@@ -78,6 +158,22 @@
     "description": "Есть в наличии ",
     "count":22,
     "image": "images/Velocity/VW_2.png"
+  },
+  "Vossen 'CV7'": {
+    "name":"Vossen",
+    "rating":3,
+    "cost": 600,
+    "description": "Есть в наличии ",
+    "count":36,
+    "image": "images/Vossen/Vossen_1.png"
+  },
+  "Vossen 'VFS5'": {
+    "name":"Vossen",
+    "rating":4,
+    "cost": 550,
+    "description": "Есть в наличии ",
+    "count":40,
+    "image": "images/Vossen/Vossen_2.jpg"
   },
   "Volkswagen 'SKU'": {
     "name":"Volkswagen",
