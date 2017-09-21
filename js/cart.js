@@ -1,11 +1,204 @@
 var cart={};//Корзина
 var p=0;
+var dataTab=0;
+var dataTabKr=0;
 
 $(function () {
     checkCart();
     showMiniCart();
+
+
+    $('.visa').click(function () {
+        dataTab=0;
+        fTabs();
+        fTabsTexterea();
+    });
+    $('.mastercard').click(function () {
+        dataTab=1;
+        fTabs();
+        fTabsTexterea();
+    });
+    $('.yamoney').click(function () {
+        dataTab=2;
+        fTabs();
+        fTabsTexterea();
+    });
+    $('.paypal').click(function () {
+        dataTab=3;
+        fTabs();
+        fTabsTexterea();
+    });
+    $('.webmoney').click(function () {
+        dataTab=4;
+        fTabs();
+        fTabsTexterea();
+    });
+
+
+
+
+
+
+    $('.privat').click(function () {
+        dataTabKr=0;
+        fTabs_2();
+    });
+    $('.pumb').click(function () {
+        dataTabKr=1;
+        fTabs_2();
+    });
+    $('.oshad').click(function () {
+        dataTabKr=2;
+        fTabs_2();
+    });
+    $('.otpbank').click(function () {
+        dataTabKr=3;
+        fTabs_2();
+    });
+    $('.alfa').click(function () {
+        dataTabKr=4;
+        fTabs_2();
+    });
+    $('.kredo').click(function () {
+        dataTabKr=5;
+        fTabs_2();
+    });
+
+    $('.back').click(function () {
+        $('.numberOpl').css('display','block');
+        $('.oplata textarea').css('display','none');
+        $('.back').css('display','none');
+        $('.kreditForm').css('display','none');
+    });
+
+    $("select").change(function(){
+        if($(this).val() == '')
+            return false;
+
+        if($(this).val()=="Наличными") {
+            $(".kredit").css('display', 'none');
+            $(".oplata").css('display', 'block');
+            $('.kreditForm').css('display','none');
+            $('.numberOpl').css('display','block');
+            $('.back').css('display','none');
+        }
+
+        if($(this).val()=="Кредит") {
+            $(".oplata").css('display', 'none');
+            $(".kredit").css('display', 'block');
+            $('.kreditForm').css('display','none');
+            $('.numberOplKredit').css({
+                'width':'',
+                'height':''
+            })
+        }
+    });
+
+
+    $('.kredit img, .oplata img').click(function () {
+
+        $('.kreditForm').css('display','block');
+    });
+
+    $(".kreditForm .right").click(function () {
+        $('.kreditForm').css('display','none');
+        $('.numberOplKredit').css({
+            'width':'',
+            'height':''
+        });
+    });
+
+
+    function CVC() {
+        $('.CVC2').css('display', 'none');
+    }
+
+    var timer=setTimeout(CVC, 3000);
+
+    $('.cvc input')
+        .click(function () {
+            $('.CVC2').css('display','block');
+        })
+        .mouseenter(function () {
+            clearTimeout(timer);
+        })
+        .mouseleave(function () {
+            setTimeout(CVC, 5000);
+        });
+
+    $('.CVC2')
+        .mouseenter(function () {
+             clearTimeout(timer);
+         })
+        .mouseleave(function () {
+            setTimeout(CVC, 3000);
+        });
+
+    $('.cvv2-key').click(function () {
+       var id=$(this).attr('id');
+       id=parseInt(id);
+       const CVC = $('.inputCVC').val();
+
+       if($('.inputCVC').val().length<3)  {
+            $('.inputCVC').val(CVC+id);
+       }
+    });
+    
+    $('.deleteCVC').click(function () {
+        $('.inputCVC').val('');
+    });
+
+    $('.inputCVC').keydown(function(e){
+        e.preventDefault()
+    });
+
+    $('.inpNumber').bind("change keyup input click", function() {
+        if (this.value.match(/[^0-9]/g)) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        }
+    });
+
+
 });
 
+function fTabs() {
+    var number=$('.numberOpl');
+
+    for(var i=0;i<number.length;i++){
+        if(dataTab==i)
+        {
+            number[i].style.display='block';
+            $('div .back').css('display','block');
+        }
+
+        else
+            number[i].style.display='none';
+    }
+}
+function fTabs_2() {
+    var number_2 = $('.numberOplKredit');
+
+    for (var i = 0; i < number_2.length; i++) {
+        if (dataTabKr==i) {
+            number_2[i].style.width = 200+'px';
+            number_2[i].style.height = 200+'px';
+        }
+        else {
+            number_2[i].style.width = '';
+            number_2[i].style.height ='';
+        }
+    }
+}
+
+function fTabsTexterea() {
+    var texterea=$('.oplata textarea');
+    for(var i=0;i<texterea.length;i++){
+        if(dataTab==i)
+            texterea[i].style.display='block';
+        else
+            texterea[i].style.display='none';
+    }
+}
 
 $.getJSON('goods.json', function (data) {
     var goods=data;//все товары в массиве
@@ -24,7 +217,7 @@ $.getJSON('goods.json', function (data) {
             $("#price").html('0');
             $(".price").html('');
             $(".cost").css("display","none");
-            $(".form").html('');
+            $(".form").css("display","none");
         }
         else {
             var out='';

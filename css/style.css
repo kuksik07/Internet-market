@@ -391,21 +391,13 @@ button{
     margin-top: 50px;
     margin-bottom: 100px;
 }
-.form{
-    float: left;
-}
+
 .brend{
-    float: right;
-    width: 520px;
+    margin: 0 auto;
+    width: 900px;
     height: auto;
     background: white;
-    /*border: 1px solid rgba(0,0,0,0.1);*/
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.75);
-    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,.75);
-    box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
-    line-height: 1.5em;
-    position: relative;
+
 }
 
 .inp {
@@ -416,32 +408,141 @@ button{
     /*background: transparent;*/
 }
 
-#txt5{
-    height: 100px;
-}
-/*.block-3 textarea::-webkit-input-placeholder{*/
-    /*color: #a6a4ab;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    /*font-size: 15px;*/
-/*}*/
 
 .form textarea{
-    color: #a6a4ab;
+    padding-left: 20px;
+    border-color: #e1e1e1;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     padding-top: 12px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,.75);
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+    line-height: 1.5em;
+    position: relative;
+}
+
+textarea::-webkit-input-placeholder{
+    color: #a6a4ab;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 .brendimg{
     margin: 10px;
 }
 
-.form input{
-    padding: 10px;
+.form input[type=submit]{
+    padding: 10px 20px;
     border-radius: 20px;
     color: #000;
     background-color: #ffb204;
+    font-size: 15px;
     border: 1px solid transparent;
+}
+
+.selectForm, .selectFormP{
+    margin: 20px 0;
+    padding-left: 10px;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.textForm{
+    margin: 20px 0;
+    color: #595959;
+    font-size: 16px;
+}
+
+.outTextForm{
+    font-size: 24px;
+}
+
+
+
+.content-block .oplata, .content-block .kredit{
+    display: none;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.oplata img, .kredit img{
+    width: 100px;
+    height: 100px;
+    margin: auto 10px;
+    float: left;
+}
+.kredit img{
+    margin-bottom: 20px;
+}
+.kredit img:nth-last-child(1){
+    background: white;
+}
+
+.textearyaImg{
+    /*float: right;*/
+    margin-left: 140px;
+    /*margin-top: -50px;*/
+    display: none;
+}
+
+div .back{
+    margin-left: 40px;
+}
+
+.kreditForm{
+    display: none;
+}
+
+.kreditForm .inp{
+    margin: 0;
+}
+
+.selectFormP{
+    margin: 0;
+}
+
+.right{
+    margin-left: 600px;
+}
+
+.left{
+    float: left;
+    margin-right: 20px;
+}
+.inputCVC{
+    width: 60px;
+    height: 40px;
+    float: left;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    border-color: #e1e1e1;
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.75);
+}
+
+.CVC2{
+    width: 142px;
+    background: white;
+    position: absolute;
+    margin-top: -53px;
+    margin-left: 70px;
+    display: none;
+}
+.cvv2-key,.deleteCVC{
+    width: 32px;
+    height: 32px;
+    margin: 5px 6px;
+    background: #e4e9f0;
+    cursor: pointer;
+    border: 1px solid silver;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,.75);
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
 }
 
 /*.brendimg:nth-child(1),.brendimg:nth-child(2),.brendimg:nth-child(3),.brendimg:nth-child(4){*/

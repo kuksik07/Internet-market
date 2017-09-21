@@ -15,7 +15,6 @@ $('document').ready(function () {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 390) {
             var p=$(this).scrollTop();
-            console.log(p);
             $('.menu-top .home').css("display", "none");
             $('.menu-logo-home').css("display", "inline-block");
         } else{

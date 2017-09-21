@@ -43,46 +43,147 @@
 
 <div class="content-block">
     <div class="form">
+        <p class="textForm outTextForm">Оформление заказа</p>
         <form class="myForm" name="myForm" action="" onsubmit="return checkForm()">
             <div>
                 <label for="txt1"></label>
-                <textarea type="text" name="p1" id="txt1" class="inp" placeholder="Name" required></textarea>
+                <textarea type="text" name="p4" id="txt1" class="inp"  placeholder="Имя" required></textarea>
             </div>
             <div>
                 <label for="txt2"></label>
-                <textarea type="text" name="p2" id="txt2" class="inp" placeholder="Surname" required></textarea>
+                <textarea type="text" name="p4" id="txt2" class="inp"  placeholder="Фамилия" required></textarea>
             </div>
             <div>
                 <label for="txt3"></label>
-                <textarea type="text" name="p3" id="txt3" class="inp" placeholder="Patronymic"></textarea>
+                <textarea type="text" name="p4" id="txt3" class="inp"  placeholder="Отчество" required></textarea>
             </div>
             <div>
                 <label for="txt4"></label>
-                <textarea type="email" name="p4" id="txt4" class="inp"  placeholder="Email" required></textarea>
+                <textarea type="email" name="p4" id="txt4" class="inp"  placeholder="Эл. почта" required></textarea>
             </div>
             <div>
                 <label for="txt5"></label>
-                <textarea type="text" name="p5" id="txt5" class="inp" placeholder="Your Message"></textarea>
+                <textarea type="text" name="p2" id="txt5" class="inp" placeholder="Номер телефона" required></textarea>
             </div>
+            <div>
+                <label for="txt6"></label>
+                <textarea type="text" name="p2" id="txt6" class="inp" placeholder="Город" required></textarea>
+            </div>
+
+
+            <div>
+                <select class="selectForm">
+                    <option>Выберите способ доставки</option>
+                    <option>По почте</option>
+                    <option>Самовывоз</option>
+                </select>
+            </div>
+
+
+
+            <div>
+                <p class="textForm">Способ оплаты
+
+                    <select class="selectForm my_form">
+                        <option></option>
+                        <option class="nal" >Наличными</option>
+                        <option class="kred">Кредит</option>
+                    </select>
+
+                </p>
+                <div class="oplata clearfix">
+                    <div class="back textearyaImg">Ещё</div>
+                    <img src="images/Oplata/visa.png" alt="" class="visa numberOpl">
+                    <img src="images/Oplata/mastercard.png" alt="" class="mastercard numberOpl">
+                    <img src="images/Oplata/yamoney2.png" alt="" class="yamoney numberOpl">
+                    <img src="images/Oplata/Paypal.png" alt="" class="paypal numberOpl">
+                    <img src="images/Oplata/WebMoney.png" alt="" class="webmoney numberOpl">
+                </div>
+
+                <div class="kredit clearfix">
+                    <img src="images/Oplata/Kredit/privat_bank.png" class="privat numberOplKredit" alt="">
+                    <img src="images/Oplata/Kredit/pumb.png" alt="" class="pumb numberOplKredit">
+                    <img src="images/Oplata/Kredit/oshad.png" alt="" class="oshad numberOplKredit">
+                    <img src="images/Oplata/Kredit/otpbank.png" alt="" class="otpbank numberOplKredit">
+                    <img src="images/Oplata/Kredit/Alfa.png" alt="" class="alfa numberOplKredit">
+                    <img src="images/Oplata/Kredit/Kredo.png" alt="" class="kredo numberOplKredit">
+                </div>
+            </div>
+            <div class="formOplata clearfix"></div>
+
+            <div class="kreditForm">
+                <div>
+                    <textarea type='text' id="txt_0" class='inp inpNumber'  placeholder='Номер платежной карты' required></textarea>
+                </div>
+                <p class="textForm pTextForm left">Срок действия</p>
+                <p class="selectForm right">Скрыть</p>
+                <div class="clearfix"></div>
+                <div class="sel">
+                    <div class="left">
+                    <p class="selectFormP">Месяц</p>
+                    <select class="selectForm">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    </div>
+                    <div>
+                    <p class="selectFormP">Год</p>
+                    <select class="selectForm">
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="cvc clearfix">
+                    <p class="selectFormP">CVV2/CVC2</p>
+                    <input type="password"  class='inputCVC' maxlength="3" required>
+                    <div class="CVC2">
+                        <button type="button" id="1" class="cvv2-key">1</button>
+                        <button type="button" id="2" class="cvv2-key">2</button>
+                        <button type="button" id="3" class="cvv2-key">3</button>
+                        <button type="button" id="4" class="cvv2-key">4</button>
+                        <button type="button" id="5" class="cvv2-key">5</button>
+                        <button type="button" id="6" class="cvv2-key">6</button>
+                        <button type="button" id="7" class="cvv2-key">7</button>
+                        <button type="button" id="8" class="cvv2-key">8</button>
+                        <button type="button" id="9" class="cvv2-key">9</button>
+                        <button type="button" id="0" class="cvv2-key">0</button>
+                        <button type="button" id="x" class="deleteCVC">x</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="button">
-                <input class="curs" type="submit" value="Submit">
+                <input class="curs otpravka" type="submit" value="Подтвердите заказ">
             </div>
         </form>
     </div>
 </div>
 
-<div class="content-block clearfix">
-    <div class="brend clearfix">
-        <img src="images/Brand/audi.png" alt="" class="brendimg">
-        <img src="images/Brand/bmw.png" alt="" class="brendimg">
-        <img src="images/Brand/mersedes.png" alt="" class="brendimg">
-        <img src="images/Brand/volksswagen.png" alt="" class="brendimg">
-        <img src="images/Brand/opel.png" alt="" class="brendimg">
-        <img src="images/Brand/nisan.jpg" alt="" class="brendimg">
-        <img src="images/Brand/bbs_wheels_logo.gif" alt="" class="brendimg">
-        <img src="images/Brand/konig.jpg" alt="" class="brendimg">
-    </div>
-</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </body>
 </html>
