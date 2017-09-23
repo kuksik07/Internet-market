@@ -41,6 +41,28 @@
 <p class="price cost"></p>
 <div class="scroll-top">Наверх ▲</div>
 
+<!--<div class="content-block">-->
+    <!--<div class="range">-->
+        <!--<ul>-->
+            <!--<li class="active">0</li>-->
+            <!--<li>6</li>-->
+            <!--<li>12</li>-->
+            <!--<li>18</li>-->
+            <!--<li>24</li>-->
+            <!--<li>30</li>-->
+            <!--<li>36</li>-->
+            <!--<li>42</li>-->
+            <!--<li>48</li>-->
+            <!--<li>54</li>-->
+            <!--<li>60</li>-->
+            <!--<li>66</li>-->
+            <!--<li>72</li>-->
+        <!--</ul>-->
+        <!--<input type="range" min="6" max="72" step="6" value="0">-->
+    <!--</div>-->
+
+
+
 <div class="content-block">
     <div class="form">
         <p class="textForm outTextForm">Оформление заказа</p>
@@ -85,8 +107,8 @@
                 <p class="textForm">Способ оплаты
 
                     <select class="selectForm my_form">
-                        <option></option>
-                        <option class="nal" >Наличными</option>
+                        <option>Наличными</option>
+                        <option class="nal" >Карточкой</option>
                         <option class="kred">Кредит</option>
                     </select>
 
@@ -111,7 +133,8 @@
             </div>
             <div class="formOplata clearfix"></div>
 
-            <div class="kreditForm">
+            <div class="kartForm">
+
                 <div>
                     <textarea type='text' id="txt_0" class='inp inpNumber'  placeholder='Номер платежной карты' required></textarea>
                 </div>
@@ -175,6 +198,142 @@
                     </div>
                 </div>
             </div>
+
+            <div class="kreditForm">
+
+                <p class="selectForm left">Паспортные данные</p>
+                <p class="selectForm right">Скрыть</p>
+                <div class="clearfix"></div>
+
+
+               <p class="left clearfix">Фамилия</p>
+               <input type="text" required>
+
+                <div class="clearfix"></div>
+                <p class="left">Имя</p>
+               <input type="text" required>
+
+                <div class="clearfix"></div>
+                <p class="left clearfix">Отчество</p>
+                <input type="text" required>
+
+                <div class="clearfix"></div>
+                <div class="group">
+                    <p class="selectFormP">День</p>
+                    <select class="selectForm">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <p class="selectFormP">Месяц</p>
+                    <select class="selectForm">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <p class="selectFormP">Год</p>
+                    <a href="javascript:addYear(0);">+</a>
+                    <select name="year" id="year" class="selectForm">
+                        <option value="1980">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                    </select>
+                    <a href="javascript:addYear(1);">+</a>
+                </div>
+
+                <div class="clearfix"></div>
+                <p class="left clearfix">Серия и номер</p>
+                <input type="text" required>
+
+                <div class="clearfix"></div>
+
+                <div class="CONTAINER">
+
+                    <div class="RangeSlider" id="RangeSlider">
+                        <div class="RangeSlider_ClickArea">
+                            <div class="RangeSlider_Track">
+                                <div class="RangeSlider_TrackFill">
+                                    <div class="RangeSlider_Thumb"></div>
+                                </div>
+                            </div>
+                            <div class="RangeSlider_Points">
+                                <div class="RangeSlider_Point RangeSlider_PointActive">0</div>
+                                <div class="RangeSlider_Point">6</div>
+                                <div class="RangeSlider_Point">12</div>
+                                <div class="RangeSlider_Point">18</div>
+                                <div class="RangeSlider_Point">24</div>
+                                <div class="RangeSlider_Point">30</div>
+                                <div class="RangeSlider_Point">36</div>
+                                <div class="RangeSlider_Point">42</div>
+                                <div class="RangeSlider_Point">48</div>
+                                <div class="RangeSlider_Point">54</div>
+                                <div class="RangeSlider_Point">60</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="selectFormP left">Первоначальный взнос:</p><div class="monye"></div>
+                <div class="clearfix"></div>
+                <p class="selectFormP left">Ежемесячный платеж:</p><div class="monye"></div>
+                <div class="clearfix"></div>
+
+
+
+            </div>
+
+
 
             <div class="button">
                 <input class="curs otpravka" type="submit" value="Подтвердите заказ">

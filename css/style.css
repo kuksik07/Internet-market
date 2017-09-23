@@ -491,11 +491,11 @@ div .back{
     margin-left: 40px;
 }
 
-.kreditForm{
+.kartForm, .kreditForm{
     display: none;
 }
 
-.kreditForm .inp{
+.kartForm .inp{
     margin: 0;
 }
 
@@ -503,13 +503,19 @@ div .back{
     margin: 0;
 }
 
+.group{
+    display: inline-block;
+}
 .right{
     margin-left: 600px;
 }
-
 .left{
     float: left;
     margin-right: 20px;
+}
+
+.kreditForm input{
+    margin-bottom: 20px;
 }
 .inputCVC{
     width: 60px;
@@ -544,6 +550,145 @@ div .back{
     -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,.75);
     box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
 }
+
+
+
+.RangeSlider_ParticipantName {
+    padding-bottom: 10px;
+    display: block;
+}
+/*.RangeSlider_ClickArea {*/
+    /*position: relative;*/
+    /*padding: 20px 0 15px 0;*/
+    /*margin-top: -20px;*/
+    /*outline: 1px dashed #fff; !* to show clickarea *!*/
+    /*user-select: none;*/
+/*}*/
+/*.RangeSlider_ParticipantName {*/
+    /*font-size: 12px;*/
+    /*color: red;*/
+    /*text-align: center;*/
+    /*height: 49px;*/
+    /*line-height: 49px;*/
+    /*width: 1000px;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+/*}*/
+.RangeSlider_Track {
+    width: 500px;
+    border: 1px solid #5e5e5e;
+    background-color: #757575;
+    position: relative;
+    transition: all .3s;
+}
+.RangeSlider_TrackFill {
+    position: relative;
+    width: 0%;
+    height: 5px;
+    background-color: #189670;
+    transition: width .1s ease-in;
+}
+/*!* when thumb is being dragged, remove the transition *!*/
+.RangeSlider_TrackFill.RangeSlider_TrackFill-stopAnimation {
+    transition: none;
+}
+.RangeSlider_Thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(50%, -33.33%);
+}
+/*!* when thumb is being dragged, increase the size so the cursor can come outside of it slightly *!*/
+.RangeSlider_TrackFill-stopAnimation .RangeSlider_Thumb:before {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    border-radius: 50%;
+     background: rgba(255,255,255,0.1);
+}
+.RangeSlider_Points {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 4px;
+    margin: 0 489px 0 7px;
+    /*margin-right: 1390px;*/
+}
+.RangeSlider_Point {
+    color: red;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 2px;
+}
+.RangeSlider_Point:hover {
+    color: blueviolet;
+}
+.RangeSlider_Point:before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 1px;
+    background-color: #666;
+    margin: 0 auto;
+}
+.RangeSlider_Point.RangeSlider_PointActive {
+    color: black;
+}
+
+
+
+/*.range ul {*/
+    /*margin: 20px 0;*/
+    /*padding: 0;*/
+/*}*/
+
+/*.range input {*/
+    /*width: 400px;*/
+/*}*/
+
+
+
+
+/*.range li {*/
+    /*display: inline-block;*/
+    /*border: 1px solid #ccc;*/
+    /*width: 30px;*/
+    /*line-height: 25px;*/
+    /*cursor: pointer;*/
+    /*margin: 2px;*/
+    /*background-color: rgba(220, 220, 220, .1);*/
+
+    /*text-align: center;*/
+    /*padding: 4px 15px;*/
+
+    /*border-radius: 3px;*/
+    /*transition: all .3s;*/
+    /*box-shadow: 1px 1px 0 rgba(180, 180, 180, .1);*/
+/*}*/
+
+/*.range li:hover {*/
+    /*!*background-color: rgba(32, 134, 207, .65);*!*/
+    /*border: 1px solid red;*/
+    /*color: #fff;*/
+/*}*/
+
+/*.range li.active {*/
+    /*!*background-color: rgba(32, 134, 207, 1);*!*/
+    /*border: 1px solid blue;*/
+    /*color: #eee;*/
+/*}*/
+
+
 
 /*.brendimg:nth-child(1),.brendimg:nth-child(2),.brendimg:nth-child(3),.brendimg:nth-child(4){*/
     /*border-bottom: 1px solid silver;*/
