@@ -26,6 +26,21 @@ $('document').ready(function () {
         $("body").animate({"scrollTop": 0},'slow');
         return false;
     });
+    var more_button=document.getElementById('more');
+    var isClicked = false;
+    $('#more').click(function(){
+        if(isClicked){
+            isClicked=false;
+            $('#goods').css('height','1100px');
+            more_button.innerHTML = "Показать больше";
+            $("body").animate({"scrollTop": 400},'slow');
+        }else{
+            isClicked=true;
+            $('#goods').css('height','auto');
+            more_button.innerHTML = "Показать меньше";
+            $("body").animate({"scrollDown": 800},'slow');
+        }
+    });
 });
 
 function loadGoods() {
@@ -64,7 +79,7 @@ function loadGoods() {
 
             out+='</div>';
             out+='<p class="cost">Цена: '+data[key].cost+'</p>';
-            out+='<img src="'+data[key].image+'">';
+            out+='<div class="frame-img"><img src="'+data[key].image+'"></div>';
             out+='<div class="kolvo"><button class="minus" data-art="'+ key +'">-</button>' +
                 '<span class="items">'+p+'</span>' +
                 '<button class="plus" data-art="'+ key +'">+</button></div>';
@@ -83,7 +98,6 @@ function loadGoods() {
 
         function plusGoods(e) {
             //добавляем по 1 товару
-
             var counter;
             var element = e.target;
             var articul = $(this).attr('data-art');
@@ -94,9 +108,6 @@ function loadGoods() {
             else{
                 cart[articul]=1;
             }
-
-
-
             $.getJSON('goods.json', function (data) {
                 for (var key in data)
                     counter = data[articul].count;
@@ -109,8 +120,6 @@ function loadGoods() {
                     showMiniCart();
                 }
             });
-
-
             saveCartToLS();
             loadGoods();
             showMiniCart();
@@ -121,11 +130,9 @@ function loadGoods() {
                     if (articul == key) {
                         $(element).siblings(1).val(cart[articul]);
                     }
-
                 }
             }
             inputType();
-
         }
 
         function minusGoods(e) {
@@ -137,9 +144,7 @@ function loadGoods() {
             {
                 cart[articul]--;
                 function inputType() {
-
                     for (var key in cart) {
-
                         if (articul == key) {
                             $(element).siblings(1).val(cart[articul]);
                         }
@@ -153,7 +158,6 @@ function loadGoods() {
                 delete cart[articul];
                 $(element).siblings(1).val('');
             }
-
             saveCartToLS();
             loadGoods();
             showMiniCart();
@@ -224,8 +228,6 @@ function showMiniCart() {
 
     $('#mini-cart').html(out);
 }
-
-
 
 var hideTimes={};
 

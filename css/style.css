@@ -183,7 +183,7 @@ button{
     margin: 0 20px;
 }
 
-.single-goods:nth-of-type(3n){
+.single-goods:nth-of-type(3n), #more{
     margin-bottom: 30px;
 }
 
@@ -217,12 +217,12 @@ button{
 }
 
 .star-empty{
-    background: url(../images/star-empty.svg) no-repeat center;
+    background: url(../images/star-empty1.svg) no-repeat center;
     background-size: 100%;
 }
 
 .star-color{
-    background: url(../images/star-color.svg) no-repeat center;
+    background: url(../images/star-color1.svg) no-repeat center;
     background-size: 100%;
 }
 
@@ -252,11 +252,17 @@ button{
 }
 
 #goods::after{
-    content: '.';
+    content: ' ';
     display: block;
     clear: left;
     height: 0;
 }
+
+#goods{
+    overflow: hidden;
+    height: 1100px;
+}
+
 
 .kolvo input, .minus+span{
     width: 100px;
@@ -280,13 +286,13 @@ button{
 
 
 .minus, .plus, .delete{
-    color: #ffb204;
+    /*color: #ffb204;*/
+    color: #ffc757;
     font-weight: bold;
     font-size: 20px;
     line-height: 25px;
     height: 40px;
     width: 40px;
-
 }
 
 .delete{
@@ -369,6 +375,13 @@ button{
     text-align: center;
 }
 
+#more{
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+}
+
 /*.paralelogram{*/
     /*-webkit-transform: skewY(-1deg);*/
     /*-moz-transform: skewY(-1deg);*/
@@ -392,13 +405,6 @@ button{
     margin-bottom: 100px;
 }
 
-.brend{
-    margin: 0 auto;
-    width: 900px;
-    height: auto;
-    background: white;
-
-}
 
 .inp {
     width: 400px;
@@ -423,14 +429,20 @@ button{
     position: relative;
 }
 
-textarea::-webkit-input-placeholder{
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
     color: #a6a4ab;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 
-.brendimg{
-    margin: 10px;
+.brend{
+    background-color: #fff;
+    text-align: center;
+}
+
+.brend img{
+    margin: 15px;
+
 }
 
 .form input[type=submit]{
@@ -507,7 +519,7 @@ div .back{
     display: inline-block;
 }
 .right{
-    margin-left: 600px;
+    float: right;
 }
 .left{
     float: left;
@@ -693,3 +705,4 @@ div .back{
 /*.brendimg:nth-child(1),.brendimg:nth-child(2),.brendimg:nth-child(3),.brendimg:nth-child(4){*/
     /*border-bottom: 1px solid silver;*/
 /*}*/
+
