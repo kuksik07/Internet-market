@@ -461,6 +461,7 @@ textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
+
 .textForm{
     margin: 20px 0;
     color: #595959;
