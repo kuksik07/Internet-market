@@ -446,6 +446,7 @@ textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
 }
 
 .form input[type=submit]{
+    margin-top: 20px;
     padding: 10px 20px;
     border-radius: 20px;
     color: #000;
@@ -455,13 +456,12 @@ textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
 }
 
 .selectForm, .selectFormP{
-    margin: 20px 0;
+    margin-bottom: 20px;
     padding-left: 10px;
     height: 40px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
-
 .textForm{
     margin: 20px 0;
     color: #595959;
@@ -470,6 +470,7 @@ textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
 
 .outTextForm{
     font-size: 24px;
+    margin-top: 100px;
 }
 
 
@@ -481,6 +482,7 @@ textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
 }
 
 .oplata img, .kredit img{
+    display: none;
     width: 100px;
     height: 100px;
     margin: auto 10px;
@@ -589,7 +591,7 @@ div .back{
     /*text-overflow: ellipsis;*/
 /*}*/
 .RangeSlider_Track {
-    width: 500px;
+    width: 490px;
     border: 1px solid #5e5e5e;
     background-color: #757575;
     position: relative;
@@ -634,7 +636,8 @@ div .back{
     align-items: flex-end;
     justify-content: space-between;
     padding-top: 4px;
-    margin: 0 489px 0 7px;
+    /*margin-left: 10px;*/
+    /*margin: 0 10px 0 7px;*/
     /*margin-right: 1390px;*/
 }
 .RangeSlider_Point {
@@ -658,52 +661,14 @@ div .back{
     color: black;
 }
 
+.d-flex p{
+    margin-top: 15px;
+    /*vertical-align: bottom;*/
+}
 
-
-/*.range ul {*/
-    /*margin: 20px 0;*/
-    /*padding: 0;*/
-/*}*/
-
-/*.range input {*/
-    /*width: 400px;*/
-/*}*/
-
-
-
-
-/*.range li {*/
-    /*display: inline-block;*/
-    /*border: 1px solid #ccc;*/
-    /*width: 30px;*/
-    /*line-height: 25px;*/
-    /*cursor: pointer;*/
-    /*margin: 2px;*/
-    /*background-color: rgba(220, 220, 220, .1);*/
-
-    /*text-align: center;*/
-    /*padding: 4px 15px;*/
-
-    /*border-radius: 3px;*/
-    /*transition: all .3s;*/
-    /*box-shadow: 1px 1px 0 rgba(180, 180, 180, .1);*/
-/*}*/
-
-/*.range li:hover {*/
-    /*!*background-color: rgba(32, 134, 207, .65);*!*/
-    /*border: 1px solid red;*/
-    /*color: #fff;*/
-/*}*/
-
-/*.range li.active {*/
-    /*!*background-color: rgba(32, 134, 207, 1);*!*/
-    /*border: 1px solid blue;*/
-    /*color: #eee;*/
-/*}*/
-
-
-
-/*.brendimg:nth-child(1),.brendimg:nth-child(2),.brendimg:nth-child(3),.brendimg:nth-child(4){*/
-    /*border-bottom: 1px solid silver;*/
-/*}*/
-
+.numberOplKredit{
+    opacity: 0.5;
+}
+.monye{
+    margin-top: 15px;
+}

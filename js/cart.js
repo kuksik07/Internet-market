@@ -1,8 +1,8 @@
-var cart={};//Корзина
-var rezu=0;
-var p=0;
-var dataTab=0;
-var dataTabKr=0;
+var cart = {};//Корзина
+var rezu = 0;
+var p = 0;
+var dataTab = 0;
+var dataTabKr = 0;
 
 $(function () {
     checkCart();
@@ -10,115 +10,111 @@ $(function () {
 
 
     $('.visa').click(function () {
-        dataTab=0;
+        dataTab = 0;
         fTabs();
     });
     $('.mastercard').click(function () {
-        dataTab=1;
+        dataTab = 1;
         fTabs();
     });
     $('.yamoney').click(function () {
-        dataTab=2;
+        dataTab = 2;
         fTabs();
     });
     $('.paypal').click(function () {
-        dataTab=3;
+        dataTab = 3;
         fTabs();
     });
     $('.webmoney').click(function () {
-        dataTab=4;
+        dataTab = 4;
         fTabs();
     });
 
 
-
-
-
-
     $('.privat').click(function () {
-        dataTabKr=0;
+        dataTabKr = 0;
         fTabs_2();
     });
     $('.pumb').click(function () {
-        dataTabKr=1;
+        dataTabKr = 1;
         fTabs_2();
     });
     $('.oshad').click(function () {
-        dataTabKr=2;
+        dataTabKr = 2;
         fTabs_2();
     });
     $('.otpbank').click(function () {
-        dataTabKr=3;
+        dataTabKr = 3;
         fTabs_2();
     });
     $('.alfa').click(function () {
-        dataTabKr=4;
+        dataTabKr = 4;
         fTabs_2();
     });
     $('.kredo').click(function () {
-        dataTabKr=5;
+        dataTabKr = 5;
         fTabs_2();
     });
 
     $('.back').click(function () {
-        $('.numberOpl').css('display','block');
-        $('.oplata textarea').css('display','none');
-        $('.back').css('display','none');
-        $('.kartForm').css('display','none');
+        $('.numberOpl').css('display', 'block');
+        $('.oplata textarea').css('display', 'none');
+        $('.back').css('display', 'none');
+        $('.kartForm').css('display', 'none');
     });
 
 
-    $("select").change(function(){
-        if($(this).val() == '')
+    $("select").change(function () {
+        if ($(this).val() == '')
             return false;
 
-        if($(this).val()=="Наличными"){
-            $('.kartForm').css('display','none');
+        if ($(this).val() == "Наличными") {
+            $('.kartForm').css('display', 'none');
             $(".kreditForm").css('display', 'none');
             $(".kredit").css('display', 'none');
             $(".oplata").css('display', 'none');
         }
 
-        if($(this).val()=="Карточкой") {
+        if ($(this).val() == "Карточкой") {
             $(".kredit").css('display', 'none');
             $(".oplata").css('display', 'block');
-            $('.kartForm').css('display','none');
-            $('.kreditForm').css('display','none');
-            $('.numberOpl').css('display','block');
-            $('.back').css('display','none');
+            $('.kartForm').css('display', 'none');
+            $('.kreditForm').css('display', 'none');
+            $('.numberOpl').css('display', 'block');
+            $('.back').css('display', 'none');
         }
 
-        if($(this).val()=="Кредит") {
+        if ($(this).val() == "Кредит") {
             $(".oplata").css('display', 'none');
             $(".kredit").css('display', 'block');
-            $('.kartForm').css('display','none');
-            $('.kreditForm').css('display','none');
+            $('.kartForm').css('display', 'none');
+            $('.kreditForm').css('display', 'none');
             $('.numberOplKredit').css({
-                'width':'',
-                'height':''
+                'width': '',
+                'height': '',
+                'display': 'block'
             });
         }
     });
 
 
-
     $('.oplata img').click(function () {
-        $('.kartForm').css('display','block');
+        $('.kartForm').css('display', 'block');
     });
 
     $('.kredit img').click(function () {
-        $('.kreditForm').css('display','block');
+        $('.kreditForm').css('display', 'block');
     });
 
     $(".kartForm .right").click(function () {
-        $('.kartForm').css('display','none');
+        $('.kartForm').css('display', 'none');
     });
 
     $(".kreditForm .right").click(function () {
-        $('.kreditForm').css('display','none');
+        $('.kreditForm').css('display', 'none');
         $('.numberOplKredit').css({
-            'width':'',
-            'height':''
+            'width': '',
+            'height': ''
         });
     });
 
@@ -127,11 +123,11 @@ $(function () {
         $('.CVC2').css('display', 'none');
     }
 
-    var timer=setTimeout(CVC, 3000);
+    var timer = setTimeout(CVC, 3000);
 
     $('.cvc input')
         .click(function () {
-            $('.CVC2').css('display','block');
+            $('.CVC2').css('display', 'block');
         })
         .mouseenter(function () {
             clearTimeout(timer);
@@ -142,40 +138,40 @@ $(function () {
 
     $('.CVC2')
         .mouseenter(function () {
-             clearTimeout(timer);
-         })
+            clearTimeout(timer);
+        })
         .mouseleave(function () {
             setTimeout(CVC, 3000);
         });
 
     $('.cvv2-key').click(function () {
-       var id=$(this).attr('id');
-       id=parseInt(id);
-       const CVC = $('.inputCVC').val();
+        var id = $(this).attr('id');
+        id = parseInt(id);
+        const CVC = $('.inputCVC').val();
 
-       if($('.inputCVC').val().length<3)  {
-            $('.inputCVC').val(CVC+id);
-       }
+        if ($('.inputCVC').val().length < 3) {
+            $('.inputCVC').val(CVC + id);
+        }
     });
-    
+
     $('.deleteCVC').click(function () {
         $('.inputCVC').val('');
     });
 
-    $('.inputCVC').keydown(function(e){
+    $('.inputCVC').keydown(function (e) {
         e.preventDefault()
     });
 
-    $('.inpNumber').bind("change keyup input click", function() {
+    $('.inpNumber').bind("change keyup input click", function () {
         if (this.value.match(/[^0-9]/g)) {
             this.value = this.value.replace(/[^0-9]/g, '');
         }
     });
 
 
-    var RangeSlider = function(containerID) {
+    var RangeSlider = function (containerID) {
         var self = this,
-            $RangeSlider = $('#'+containerID),
+            $RangeSlider = $('#' + containerID),
             $SliderThumnb = $RangeSlider.find('.RangeSlider_Thumb'),
             $SliderTrack = $RangeSlider.find('.RangeSlider_Track'),
             $SliderTrackFill = $RangeSlider.find('.RangeSlider_TrackFill'),
@@ -185,7 +181,7 @@ $(function () {
         this.value = 0;
 
         /* helper to find slider value based on filled track width */
-        var findValueFromTrackFill = function(trackFillWidth) {
+        var findValueFromTrackFill = function (trackFillWidth) {
             var totalWidth = $SliderTrack.width(),
                 onePercentWidth = totalWidth / 100,
                 value = Math.round((trackFillWidth / onePercentWidth) / 10);
@@ -193,87 +189,87 @@ $(function () {
         };
 
         /* change highlighted number based on new value */
-        var updateSelectedValue = function(newValue) {
+        var updateSelectedValue = function (newValue) {
             $SliderPoints.removeClass('RangeSlider_PointActive');
-            $SliderPoints.eq( newValue ).addClass('RangeSlider_PointActive');
+            $SliderPoints.eq(newValue).addClass('RangeSlider_PointActive');
         };
 
         /* highlight track based on new value (and move thumb) */
-        var updateHighlightedTrack = function(newPosition) {
+        var updateHighlightedTrack = function (newPosition) {
             newPosition = newPosition + '0%';
             $SliderTrackFill.css('width', newPosition);
         };
 
         /* set up drag funcationality for thumbnail */
-        var setupDrag = function($element, initialXPosition) {
+        var setupDrag = function ($element, initialXPosition) {
             $SliderTrackFill.addClass('RangeSlider_TrackFill-stopAnimation');
             var trackWidth = $SliderTrackFill.width();
 
-            var newValue = findValueFromTrackFill( trackWidth );
+            var newValue = findValueFromTrackFill(trackWidth);
             updateSelectedValue(newValue);
 
-            $element.on('mousemove', function(e){
+            $element.on('mousemove', function (e) {
                 var newPosition = trackWidth + e.clientX - initialXPosition;
-                self.imitateNewValue( newPosition );
+                self.imitateNewValue(newPosition);
 
-                newValue = findValueFromTrackFill( $SliderTrackFill.width() );
+                newValue = findValueFromTrackFill($SliderTrackFill.width());
                 updateSelectedValue(newValue);
             });
         };
         /* remove drag functionality for thumbnail */
-        var finishDrag = function($element) {
+        var finishDrag = function ($element) {
             $SliderTrackFill.removeClass('RangeSlider_TrackFill-stopAnimation');
             $element.off('mousemove');
-            var newValue = findValueFromTrackFill( $SliderTrackFill.width() );
-            self.updateSliderValue( newValue );
+            var newValue = findValueFromTrackFill($SliderTrackFill.width());
+            self.updateSliderValue(newValue);
         };
 
         /* method to update all things required when slider value updates */
-        this.updateSliderValue = function(newValue) {
-            updateSelectedValue( newValue );
-            updateHighlightedTrack( newValue );
+        this.updateSliderValue = function (newValue) {
+            updateSelectedValue(newValue);
+            updateHighlightedTrack(newValue);
             self.value = newValue;
-            console.log('this.value = ', self.value);
+            // console.log('this.value = ', self.value);
 
-            if(self.value==0){
+            if (self.value === 0) {
                 $('.monye').html('');
             }
-            if(self.value==1){
-                $('.monye').html(((rezu/6)+(rezu*0.03)).toFixed(2));
+            if (self.value === 1) {
+                $('.monye').html(((rezu / 6) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==2){
-                $('.monye').html(((rezu/12)+(rezu*0.03)).toFixed(2));
+            if (self.value === 2) {
+                $('.monye').html(((rezu / 12) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==3){
-                $('.monye').html(((rezu/18)+(rezu*0.03)).toFixed(2));
+            if (self.value === 3) {
+                $('.monye').html(((rezu / 18) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==4){
-                $('.monye').html(((rezu/24)+(rezu*0.03)).toFixed(2));
+            if (self.value === 4) {
+                $('.monye').html(((rezu / 24) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==5){
-                $('.monye').html(((rezu/30)+(rezu*0.03)).toFixed(2));
+            if (self.value === 5) {
+                $('.monye').html(((rezu / 30) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==6){
-                $('.monye').html(((rezu/36)+(rezu*0.03)).toFixed(2));
+            if (self.value === 6) {
+                $('.monye').html(((rezu / 36) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==7){
-                $('.monye').html(((rezu/42)+(rezu*0.03)).toFixed(2));
+            if (self.value === 7) {
+                $('.monye').html(((rezu / 42) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==8){
-                $('.monye').html(((rezu/48)+(rezu*0.03)).toFixed(2));
+            if (self.value === 8) {
+                $('.monye').html(((rezu / 48) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==9){
-                $('.monye').html(((rezu/54)+(rezu*0.03)).toFixed(2));
+            if (self.value === 9) {
+                $('.monye').html(((rezu / 54) + (rezu * 0.03)).toFixed(2));
             }
-            if(self.value==10){
-                $('.monye').html(((rezu/60)+(rezu*0.03)).toFixed(2));
+            if (self.value === 10) {
+                $('.monye').html(((rezu / 60) + (rezu * 0.03)).toFixed(2));
             }
         };
 
         /* method to imitate new value without animation */
-        this.imitateNewValue = function(XPosition) {
+        this.imitateNewValue = function (XPosition) {
             $SliderTrackFill.addClass('RangeSlider_TrackFill-stopAnimation');
-            if ( XPosition > $SliderTrack.width() ) {
+            if (XPosition > $SliderTrack.width()) {
                 XPosition = $SliderTrack.width();
             }
             $SliderTrackFill.css('width', XPosition + 'px');
@@ -282,38 +278,38 @@ $(function () {
         /*
          * bind events when instance created
          */
-        $ClickArea.on('mousedown', function(e){
+        $ClickArea.on('mousedown', function (e) {
             /* if a number or thumbnail has been clicked, use their event instead */
             var $target = $(e.target);
-            if ( $target.hasClass('RangeSlider_Thumb') ) {
+            if ($target.hasClass('RangeSlider_Thumb')) {
                 return false;
             }
             /* now we can continue based on where the clickable area was clicked */
-            self.imitateNewValue( e.offsetX );
-            setupDrag( $(this), e.clientX );
+            self.imitateNewValue(e.offsetX);
+            setupDrag($(this), e.clientX);
         });
 
-        $ClickArea.on('mouseup', function(e){
-            finishDrag( $(this) );
+        $ClickArea.on('mouseup', function (e) {
+            finishDrag($(this));
         });
 
         // update value when markers are clicked
-        $SliderPoints.on('mousedown', function(e){
+        $SliderPoints.on('mousedown', function (e) {
             e.stopPropagation();
-            var XPos = $(this).position().left + ($(this).width()/2);
-            self.imitateNewValue( XPos );
-            setupDrag( $ClickArea, e.clientX );
+            var XPos = $(this).position().left + ($(this).width() / 2);
+            self.imitateNewValue(XPos);
+            setupDrag($ClickArea, e.clientX);
         });
 
         // when thumbnail is clicked down, init the drag stuff
-        $SliderThumnb.on('mousedown', function(e){
+        $SliderThumnb.on('mousedown', function (e) {
             e.stopPropagation();
-            setupDrag( $(this), e.clientX );
+            setupDrag($(this), e.clientX);
         });
 
         // when the thumbnail is released, remove the drag stuff
-        $SliderThumnb.on('mouseup', function(e){
-            finishDrag( $(this) );
+        $SliderThumnb.on('mouseup', function (e) {
+            finishDrag($(this));
         });
     };
 
@@ -321,105 +317,103 @@ $(function () {
     var rangeSlider2 = new RangeSlider('RangeSlider2');
 
 
-
 });
 
 function addYear(flag) {
-    var s=document.forms[0].year;
+    var s = document.forms[0].year;
     var val, o;
-    if(flag){
-        val=s.options[s.length-1].value*1+1;
-        o=new Option(val,val,false,true);
+    if (flag) {
+        val = s.options[s.length - 1].value * 1 + 1;
+        o = new Option(val, val, false, true);
         try {
-            s.add(o,null);
-        }catch (e){
+            s.add(o, null);
+        } catch (e) {
             s.add(o);
         }
     }
     else {
-        val=s.options[0].value*1-1;
-        o=new Option(val,val,false,true);
+        val = s.options[0].value * 1 - 1;
+        o = new Option(val, val, false, true);
         try {
-            s.add(o,s.options[0]);
-        }catch (e){
-            s.add(o,0);
+            s.add(o, s.options[0]);
+        } catch (e) {
+            s.add(o, 0);
         }
     }
 }
 
 function fTabs() {
-    var number=$('.numberOpl');
+    var number = $('.numberOpl');
 
-    for(var i=0;i<number.length;i++){
-        if(dataTab==i)
-        {
-            number[i].style.display='block';
-            $('div .back').css('display','block');
+    for (var i = 0; i < number.length; i++) {
+        if (dataTab == i) {
+            number[i].style.display = 'block';
+            $('div .back').css('display', 'block');
         }
 
         else
-            number[i].style.display='none';
+            number[i].style.display = 'none';
     }
 }
+
 function fTabs_2() {
     var number_2 = $('.numberOplKredit');
 
     for (var i = 0; i < number_2.length; i++) {
-        if (dataTabKr==i) {
-            number_2[i].style.width = 200+'px';
-            number_2[i].style.height = 200+'px';
+        if (dataTabKr === i) {
+            number_2[i].style.opacity = 1;
+            // number_2[i].style.height = 200 + 'px';
         }
         else {
-            number_2[i].style.width = '';
-            number_2[i].style.height ='';
+            number_2[i].style.opacity = 0.5;
+            // number_2[i].style.height = '';
         }
     }
 }
 
 
-
 $.getJSON('goods.json', function (data) {
-    var goods=data;//все товары в массиве
+    var goods = data;//все товары в массиве
+
 
     checkCart();
     loadGoodsCart();
 
     function loadGoodsCart() {
         //загружаю товары на страницу
-        if($.isEmptyObject(cart)) {
+        if ($.isEmptyObject(cart)) {
             //Корзина пуста
-            var out='<div class="sad-icon"></div>' +
+            var out = '<div class="sad-icon"></div>' +
                 'Корзина пуста. Добавьте товар в корзину <br><a href="index.html">Главная страница</a>';
 
             $(".my-cart").html(out);
             $("#price").html('0');
             $(".price").html('');
-            $(".cost").css("display","none");
-            $(".form").css("display","none");
+            $(".cost").css("display", "none");
+            $(".form").css("display", "none");
         }
         else {
-            var out='';
-            var rezalt=[];
-            for(var key in cart)
-            {
-                out+='<div class="single-goods">';
-                out+='<p class="goods-header">'+key+'</p><span><button class="delete" data-art="' + key + '">✖</button></span>';
-                out+='<p>Цена: '+goods[key].cost+" $ / шт."+'</p>';
-                out+='<img src="'+goods[key].image+'">';
-                out +='<p></p>'+'<button class="minus" data-art="' + key + '">-</button>';
-                out+='<span class="outCount">'+cart[key]+'</span>';
-                out += '<span><button class="plus" data-art="' + key + '">+</button></span>'+'<p></p>';
-                out+='<p></p>'+'<span class="outText cost">'+goods[key].cost*cart[key]+'</span>';
-                out+='<p></p>'+'<span class="outText">'+goods[key].description+' '+
-                    '<span>'+goods[key].count+'</span>'+'</span>';
-                out+='</div>';
+            var out = '';
+            var rezalt = [];
+            for (var key in cart) {
+                out += '<div class="single-goods">';
+                out += '<p class="goods-header">' + key + '</p><span><button class="delete" data-art="' + key + '">✖</button></span>';
+                out += '<p>Цена: ' + goods[key].cost + " $ / шт." + '</p>';
+                out += '<img src="' + goods[key].image + '">';
+                out += '<p></p>' + '<button class="minus" data-art="' + key + '">-</button>';
+                out += '<span class="outCount">' + cart[key] + '</span>';
+                out += '<span><button class="plus" data-art="' + key + '">+</button></span>' + '<p></p>';
+                out += '<p></p>' + '<span class="outText cost">' + goods[key].cost * cart[key] + '</span>';
+                out += '<p></p>' + '<span class="outText">' + goods[key].description + ' ' +
+                    '<span>' + goods[key].count + '</span>' + '</span>';
+                out += '</div>';
 
                 p = goods[key].cost * cart[key];
                 rezalt.push(p);
             }
-
-            for(var i=0;i<rezalt.length;i++)
-                rezu+=rezalt[i];
+            // var rezu = 0;
+            for (var i = 0; i < rezalt.length; i++)
+                rezu += rezalt[i];
 
             $(".my-cart").html(out);
             $(".plus").click(plusGoodsCart);
@@ -429,21 +423,20 @@ $.getJSON('goods.json', function (data) {
             $(".price").html(rezu);
         }
     }
+
     function plusGoodsCart() {
         //добавляем по 1 товару
         var counter;
-        var articul=$(this).attr('data-art');
+        var articul = $(this).attr('data-art');
         cart[articul]++;
-        $.getJSON('goods.json',function (data) {
-            for (var key in data)
-            {
-                counter=data[articul].count;
+        $.getJSON('goods.json', function (data) {
+            for (var key in data) {
+                counter = data[articul].count;
             }
 
-            if(counter<cart[articul])
-            {
+            if (counter < cart[articul]) {
                 alert("Вы выбрали больше дисков, чем на складе");
-                cart[articul]=counter;
+                cart[articul] = counter;
                 saveCartToLS();
                 loadGoodsCart();
                 showMiniCart();
@@ -456,9 +449,9 @@ $.getJSON('goods.json', function (data) {
 
     function minusGoodsCart() {
         //убираем по 1 товару
-        var articul=$(this).attr('data-art');
+        var articul = $(this).attr('data-art');
 
-        if(cart[articul]>1)
+        if (cart[articul] > 1)
             cart[articul]--;
         else
             delete cart[articul];
@@ -471,7 +464,7 @@ $.getJSON('goods.json', function (data) {
     function deleteGoods() {
         //удаляем товары
 
-        var articul=$(this).attr('data-art');
+        var articul = $(this).attr('data-art');
         delete cart[articul];
         saveCartToLS();
         loadGoodsCart();
@@ -482,7 +475,7 @@ $.getJSON('goods.json', function (data) {
 
     function s(cart) {
         var count = 0;
-        for(key in cart) {
+        for (key in cart) {
             count += cart[key];
         }
         return count;
@@ -490,27 +483,26 @@ $.getJSON('goods.json', function (data) {
 });
 
 
-
 function showMiniCart() {
     var out = '';
-    var price='';
-    if (s(cart)<=100)
+    var price = '';
+    if (s(cart) <= 100)
         out += s(cart);
 
     else
-        out+="100+";
+        out += "100+";
 
     $('#mini-cart').html(out);
 }
 
 function checkCart() {
     //проверяет наличие корзины в localStorege
-    if(localStorage.getItem('cart')!=null)
-        cart=JSON.parse(localStorage.getItem('cart'));
+    if (localStorage.getItem('cart') != null)
+        cart = JSON.parse(localStorage.getItem('cart'));
 }
 
 
 function saveCartToLS() {
     //сохраняю корзину в localStorage
-    localStorage.setItem('cart',JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
