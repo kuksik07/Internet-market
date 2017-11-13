@@ -332,6 +332,10 @@ button {
     transition: 1s;
 }
 
+.delete:active{
+    outline: none;
+}
+
 .single-goods .add-to-cart {
     font-size: 14px;
     line-height: 2.8em;
@@ -431,6 +435,10 @@ button {
     float: left;
     text-align: center;
     width: 500px;
+}
+
+.cvc{
+    position: relative;
 }
 
 .form input[type=text], .drop-menu, .inputCVC {
@@ -601,6 +609,7 @@ select {
 
 .selectFormP {
     margin: 0;
+    float: left;
 }
 
 .group {
@@ -654,7 +663,8 @@ select {
     width: 142px;
     background: white;
     position: absolute;
-    right: 94px;
+    right: 0;
+    top: 0;
     display: none;
     box-shadow: 0 1px 2px rgb(204, 204, 204);
     border-radius: 3px;
@@ -672,6 +682,7 @@ select {
 .cvv2-key:hover, .deleteCVC:hover {
     background-color: #e2e2e2;
 }
+
 
 .RangeSlider_ParticipantName {
     padding-bottom: 10px;
