@@ -17,16 +17,12 @@ $(function () {
         dataTab = 1;
         fTabs();
     });
-    $('.yamoney').click(function () {
+    $('.paypal').click(function () {
         dataTab = 2;
         fTabs();
     });
-    $('.paypal').click(function () {
-        dataTab = 3;
-        fTabs();
-    });
     $('.webmoney').click(function () {
-        dataTab = 4;
+        dataTab = 3;
         fTabs();
     });
 
@@ -43,63 +39,54 @@ $(function () {
         dataTabKr = 2;
         fTabs_2();
     });
-    $('.otpbank').click(function () {
-        dataTabKr = 3;
-        fTabs_2();
-    });
     $('.alfa').click(function () {
-        dataTabKr = 4;
-        fTabs_2();
-    });
-    $('.kredo').click(function () {
-        dataTabKr = 5;
+        dataTabKr = 3;
         fTabs_2();
     });
 
     $('.back').click(function () {
-        $('.numberOpl').css('display', 'block');
-        $('.oplata textarea').css('display', 'none');
+        $('.numberOpl').css('display', 'inline-block');
+        $('.oplata input').css('display', 'none');
         $('.back').css('display', 'none');
         $('.kartForm').css('display', 'none');
     });
 
 
-    $("select").change(function () {
-        if ($(this).val() == '')
+    $('.dropeddown li').click(function () {
+    if ($(this).parents('.drop-menu').find('input').val() == '')
             return false;
 
-        if ($(this).val() == "Наличными") {
+        if ($(this).parents('.drop-menu').find('input').val() == "Наличными") {
             $('.kartForm').css('display', 'none');
             $(".kreditForm").css('display', 'none');
             $(".kredit").css('display', 'none');
             $(".oplata").css('display', 'none');
         }
 
-        if ($(this).val() == "Карточкой") {
+        if ($(this).parents('.drop-menu').find('input').val() == "Карточкой") {
             $(".kredit").css('display', 'none');
             $(".oplata").css('display', 'block');
             $('.kartForm').css('display', 'none');
             $('.kreditForm').css('display', 'none');
-            $('.numberOpl').css('display', 'block');
+            $('.numberOpl').css('display', 'inline-block');
             $('.back').css('display', 'none');
         }
 
-        if ($(this).val() == "Кредит") {
+        if ($(this).parents('.drop-menu').find('input').val() == "Кредит") {
             $(".oplata").css('display', 'none');
             $(".kredit").css('display', 'block');
             $('.kartForm').css('display', 'none');
             $('.kreditForm').css('display', 'none');
             $('.numberOplKredit').css({
-                'width': '',
-                'height': '',
-                'display': 'block'
+                'opacity': '0.5'
             });
         }
     });
 
 
     $('.oplata img').click(function () {
-        $('.kartForm').css('display', 'block');
+        $('.kartForm').css('display', 'inline-block');
+        $('.kartForm .inpNumber, .kartForm input').css('display', 'inline-block');
     });
 
     $('.kredit img').click(function () {
@@ -112,10 +99,6 @@ $(function () {
 
     $(".kreditForm .right").click(function () {
         $('.kreditForm').css('display', 'none');
-        $('.numberOplKredit').css({
-            'width': '',
-            'height': ''
-        });
     });
 
 
@@ -229,39 +212,39 @@ $(function () {
             updateSelectedValue(newValue);
             updateHighlightedTrack(newValue);
             self.value = newValue;
-            // console.log('this.value = ', self.value);
+            console.log('this.value = ', self.value);
 
-            if (self.value === 0) {
+            if (self.value == 0) {
                 $('.monye').html('');
             }
-            if (self.value === 1) {
+            if (self.value == 1) {
                 $('.monye').html(((rezu / 6) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 2) {
+            if (self.value == 2) {
                 $('.monye').html(((rezu / 12) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 3) {
+            if (self.value == 3) {
                 $('.monye').html(((rezu / 18) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 4) {
+            if (self.value == 4) {
                 $('.monye').html(((rezu / 24) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 5) {
+            if (self.value == 5) {
                 $('.monye').html(((rezu / 30) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 6) {
+            if (self.value == 6) {
                 $('.monye').html(((rezu / 36) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 7) {
+            if (self.value == 7) {
                 $('.monye').html(((rezu / 42) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 8) {
+            if (self.value == 8) {
                 $('.monye').html(((rezu / 48) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 9) {
+            if (self.value == 9) {
                 $('.monye').html(((rezu / 54) + (rezu * 0.03)).toFixed(2));
             }
-            if (self.value === 10) {
+            if (self.value == 10) {
                 $('.monye').html(((rezu / 60) + (rezu * 0.03)).toFixed(2));
             }
         };
@@ -347,7 +330,9 @@ function fTabs() {
 
     for (var i = 0; i < number.length; i++) {
         if (dataTab == i) {
-            number[i].style.display = 'block';
+            var card = number[i];
+            $(card).clone().appendTo(".img-card");
+            $(card).css('display','none');
             $('div .back').css('display', 'block');
         }
 
@@ -360,13 +345,11 @@ function fTabs_2() {
     var number_2 = $('.numberOplKredit');
 
     for (var i = 0; i < number_2.length; i++) {
-        if (dataTabKr === i) {
-            number_2[i].style.opacity = 1;
-            // number_2[i].style.height = 200 + 'px';
+        if (dataTabKr == i) {
+            number_2[i].style.opacity = '1';
         }
         else {
-            number_2[i].style.opacity = 0.5;
-            // number_2[i].style.height = '';
+            number_2[i].style.opacity = '0.5';
         }
     }
 }
@@ -374,7 +357,6 @@ function fTabs_2() {
 
 $.getJSON('goods.json', function (data) {
     var goods = data;//все товары в массиве
-
 
     checkCart();
     loadGoodsCart();
@@ -411,7 +393,7 @@ $.getJSON('goods.json', function (data) {
                 p = goods[key].cost * cart[key];
                 rezalt.push(p);
             }
-            // var rezu = 0;
+
             for (var i = 0; i < rezalt.length; i++)
                 rezu += rezalt[i];
 
@@ -506,3 +488,19 @@ function saveCartToLS() {
     //сохраняю корзину в localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+/*Select Box js*/
+$('.drop-menu').click(function () {
+    $(this).attr('tabindex', 1).focus();
+    $(this).toggleClass('active');
+    $(this).find('.dropeddown').slideToggle(300);
+});
+$('.drop-menu').focusout(function () {
+    $(this).removeClass('active');
+    $(this).find('.dropeddown').slideUp(300);
+});
+$('.drop-menu .dropeddown li').click(function () {
+    $(this).parents('.drop-menu').find('span').text($(this).text());
+    $(this).parents('.drop-menu').find('input').attr('value', $(this).text());
+});
+/*End Select Box js*/

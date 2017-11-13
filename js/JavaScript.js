@@ -41,20 +41,6 @@ $('document').ready(function () {
             $("body").animate({"scrollDown": 800},'slow');
         }
     });
-
-    $('.find').click(function () {
-        var d=$('#inputFind').val();
-
-        $.getJSON('goods.json',function (data) {
-            for(var key in data)
-            {
-                if(key===d)
-                    console.log(1);
-                else
-                    console.log(2);
-            }
-        });
-    });
 });
 
 function loadGoods() {
@@ -86,7 +72,7 @@ function loadGoods() {
 
             p=cart[key];
 
-            if(p===undefined)
+            if(p==undefined)
                 p='Кол-во';
 
 
