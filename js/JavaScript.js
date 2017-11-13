@@ -6,13 +6,6 @@ $('document').ready(function () {
     checkCart();
     showMiniCart();
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $('.scroll-top').fadeIn("slow");
-        } else {
-            $('.scroll-top').fadeOut("slow");
-        }
-    });
-    $(window).scroll(function() {
         if ($(this).scrollTop() > 390) {
             var p=$(this).scrollTop();
             $('.menu-top .home').css("display", "none");
@@ -22,8 +15,18 @@ $('document').ready(function () {
             $('.menu-logo-home').css("display", "none");
         }
     });
-    $(".scroll-top").on('click', function() {
-        $("body").animate({"scrollTop": 0},'slow');
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('.scroll-top').fadeIn();
+        } else {
+            $('.scroll-top').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scroll-top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
         return false;
     });
     var more_button=document.getElementById('more');
@@ -32,13 +35,13 @@ $('document').ready(function () {
         if(isClicked){
             isClicked=false;
             $('#goods').css('height','1100px');
-            more_button.innerHTML = "Показать больше";
-            $("body").animate({"scrollTop": 400},'slow');
+            $(this).css('background-position','-10px 10px');
+            $("html, body").animate({"scrollTop": 400},'slow');
         }else{
             isClicked=true;
             $('#goods').css('height','auto');
-            more_button.innerHTML = "Показать меньше";
-            $("body").animate({"scrollDown": 800},'slow');
+            $(this).css('background-position','-10px -30px');
+            $("html, body").animate({"scrollDown": 800},'slow');
         }
     });
 });

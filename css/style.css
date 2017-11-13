@@ -47,6 +47,10 @@ a:hover, button:hover, input[type=submit]:hover, .back {
     cursor: pointer;
 }
 
+.back{
+    font-size: 14px;
+}
+
 p {
     margin: 0;
 }
@@ -345,24 +349,19 @@ button {
 
 .scroll-top {
     position: fixed;
-    right: 0;
-    bottom: 0;
+    right: 20px;
+    bottom: calc(50% - 60px);
     z-index: 5;
-    height: 100%;
-    width: calc((100% - 1000px) / 4);
-    vertical-align: top;
-    text-align: center;
-    padding-top: 80px;
-    color: rgba(255, 178, 4, 0.5);
-    font-size: 14px;
-    border: 0;
-    display: none;
-    background: none;
+    height: 60px;
+    width: 60px;
+    background: url("../images/up-arrow.svg");
+    border-radius: 50%;
+    opacity: 0.9;
 }
 
-.scroll-top:hover {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-    color: rgba(255, 178, 4, 1);
+.scroll-top:hover{
+    cursor: pointer;
+    opacity: 1;
 }
 
 .sad-icon {
@@ -385,36 +384,28 @@ button {
 
 #more {
     text-align: center;
-    font-size: 14px;
-    display: inline-block;
-    width: 100%;
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url("../images/show-more.svg") no-repeat center;
+    background-size: 60px;
+    background-position: -10px 10px;
+    opacity: 0.9;
+    margin: 0 auto;
 }
 
-/*.paralelogram{*/
-/*-webkit-transform: skewY(-1deg);*/
-/*-moz-transform: skewY(-1deg);*/
-/*-o-transform: skewY(-1deg);*/
-/*}*/
-
-/*.banner-img{*/
-/*-webkit-transform: skewY(1deg);*/
-/*-moz-transform: skewY(1deg);*/
-/*-o-transform: skewY(1deg);*/
-/*}*/
-
-/*@media screen and (max-width: 1325px){*/
-/*html,body{*/
-/*overflow-x: hidden;*/
-/*}*/
-/*}*/
+#more:hover{
+    opacity: 1;
+}
 
 .content-block .form, .brend {
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    /*margin-bottom: 100px;*/
 }
 
 .form {
     color: #3f3f3f;
+    padding-bottom: 40px;
 }
 
 .order-contact-info *, .order-payment * {
