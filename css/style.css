@@ -635,6 +635,10 @@ select {
     display: inline-block;
 }
 
+.term:last-of-type{
+    float: right;
+}
+
 .term-heading {
     display: inline-block;
 }
