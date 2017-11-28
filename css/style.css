@@ -314,7 +314,6 @@ button {
 }
 
 .minus, .plus, .delete {
-    /*color: #ffb204;*/
     color: #ffc757;
     font-weight: bold;
     font-size: 20px;
@@ -380,6 +379,7 @@ button {
 
 .price {
     text-align: center;
+    font-weight: bold;
 }
 
 #more {
@@ -473,7 +473,7 @@ button {
 }
 
 .drop-menu .select i:after {
-    content: '▼';
+    content: 'Ў';
 }
 
 .drop-menu.active:hover,
@@ -577,13 +577,6 @@ button {
     display: inline-block;
 }
 
-/*.kredit img{*/
-/*margin-bottom: 20px;*/
-/*}*/
-/*.kredit img:nth-last-child(1){*/
-/*background: white;*/
-/*}*/
-
 select {
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -614,6 +607,11 @@ select {
 .left {
     float: left;
     margin-right: 20px;
+}
+
+.sign{
+    font-size: 14px;
+    line-height: 2em;
 }
 
 .form input.birth-date, .birth-date {
@@ -678,151 +676,68 @@ select {
     background-color: #e2e2e2;
 }
 
-
-.RangeSlider_ParticipantName {
-    padding-bottom: 10px;
-    display: block;
-}
-
-/*.RangeSlider_ClickArea {*/
-/*position: relative;*/
-/*padding: 20px 0 15px 0;*/
-/*margin-top: -20px;*/
-/*outline: 1px dashed #fff; !* to show clickarea *!*/
-/*user-select: none;*/
-/*}*/
-/*.RangeSlider_ParticipantName {*/
-/*font-size: 12px;*/
-/*color: red;*/
-/*text-align: center;*/
-/*height: 49px;*/
-/*line-height: 49px;*/
-/*width: 1000px;*/
-/*white-space: nowrap;*/
-/*overflow: hidden;*/
-/*text-overflow: ellipsis;*/
-/*}*/
-.RangeSlider_Track {
-    width: 350px;
-    box-shadow: 0 0 2px rgb(204, 204, 204);
-    background-color: #888;
-    position: relative;
-    transition: all .3s;
-}
-
-.RangeSlider_TrackFill {
-    position: relative;
-    width: 0%;
-    height: 5px;
-    background-color: #5e5e5e;
-    transition: width .1s ease-in;
-}
-
-/*!* when thumb is being dragged, remove the transition *!*/
-.RangeSlider_TrackFill.RangeSlider_TrackFill-stopAnimation {
-    transition: none;
-}
-
-.RangeSlider_Thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 15px;
-    height: 15px;
-    background: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-    transform: translate(50%, -33.33%);
-}
-
-/*!* when thumb is being dragged, increase the size so the cursor can come outside of it slightly *!*/
-.RangeSlider_TrackFill-stopAnimation .RangeSlider_Thumb:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -500px;
-    left: -500px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.RangeSlider_Points {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding-top: 4px;
-    /*margin-right: 1390px;*/
-}
-
-.RangeSlider_Point {
-    cursor: pointer;
-    text-align: center;
-    margin-right: -10px;
-    color: #666
-}
-
-.RangeSlider_Point:hover {
-    color: #000;
-}
-
-.RangeSlider_Point:before {
-    content: "";
-    display: block;
-    height: 5px;
-    width: 1px;
-    background-color: #666;
-    margin: 0 auto;
-}
-
-.RangeSlider_Point.RangeSlider_PointActive {
-    color: #000;
-}
-
 .order-cost{
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-/*.range ul {*/
-/*margin: 20px 0;*/
-/*padding: 0;*/
-/*}*/
+.wrap {
+    padding: 20px 10px 50px;
+}
+#nlVal {
+    display:inline-block;
+}
+#slider {
+    width: 90%;
+    height: 10px;
+    background: lightgrey;
+    border-radius: 50px;
+}
 
-/*.range input {*/
-/*width: 400px;*/
-/*}*/
+#slider label {
+    position: absolute;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: -10px;
+    text-align:left;
+    font-size: 13px;
+}
 
-/*.range li {*/
-/*display: inline-block;*/
-/*border: 1px solid #ccc;*/
-/*width: 30px;*/
-/*line-height: 25px;*/
-/*cursor: pointer;*/
-/*margin: 2px;*/
-/*background-color: rgba(220, 220, 220, .1);*/
+.ui-slider-handle.ui-state-default.ui-corner-all {
+    border-radius: 100%;
+    background: black;
+    border: 6px solid #ffb204;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    cursor:grab;
+}
 
-/*text-align: center;*/
-/*padding: 4px 15px;*/
+.ui-slider-handle.ui-state-active,
+.ui-slider-handle.ui-state-hover,
+.ui-slider-handle.ui-state-focus {
+    border: none;
+    outline: 0;
+}
 
-/*border-radius: 3px;*/
-/*transition: all .3s;*/
-/*box-shadow: 1px 1px 0 rgba(180, 180, 180, .1);*/
-/*}*/
+.ui-slider-handle.ui-state-active:after {
+    content: 'Месяцев';
+    position: absolute;
+    top: -40px;
+    left: -19px;
+    background: #ffb204;
+    color: black;
+    font-size: .700em;
+    padding: 5px 8px;
+}
 
-/*.range li:hover {*/
-/*!*background-color: rgba(32, 134, 207, .65);*!*/
-/*border: 1px solid red;*/
-/*color: #fff;*/
-/*}*/
-
-/*.range li.active {*/
-/*!*background-color: rgba(32, 134, 207, 1);*!*/
-/*border: 1px solid blue;*/
-/*color: #eee;*/
-/*}*/
-
-/*.brendimg:nth-child(1),.brendimg:nth-child(2),.brendimg:nth-child(3),.brendimg:nth-child(4){*/
-/*border-bottom: 1px solid silver;*/
-/*}*/
-
+.ui-slider-handle.ui-state-active:before {
+    content: '';
+    background: #ffb204;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    transform: rotate(45deg);
+}

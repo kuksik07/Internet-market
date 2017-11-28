@@ -8,7 +8,7 @@ var dataTabKr = 0;
 $(function () {
     checkCart();
     showMiniCart();
-
+    range();
 
     $('.visa').click(function () {
         dataTab = 0;
@@ -54,7 +54,7 @@ $(function () {
 
 
     $('.dropeddown li').click(function () {
-    if ($(this).parents('.drop-menu').find('input').val() == '')
+        if ($(this).parents('.drop-menu').find('input').val() == '')
             return false;
 
         if ($(this).parents('.drop-menu').find('input').val() == "Наличными") {
@@ -303,6 +303,33 @@ $(function () {
 
 });
 
+function range() {
+    var valMap = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
+
+    $("#slider").slider({
+        max: valMap.length - 1,
+        slide: function (event, ui) {
+            $('.monye').html(((rezuk / valMap[ui.value]) + (rezuk * 0.03)).toFixed(2));
+        }
+    })
+        .each(function () {
+
+            var opt = $(this).data().uiSlider.options;
+
+            var vals = opt.max - opt.min;
+
+
+            var arrayLength = valMap.length;
+            for (var i = 0; i < arrayLength; i++) {
+
+                var el = $('<label>' + (valMap[i]) + '</label>').css('left', (i / vals * 100) + '%');
+
+                $("#slider").append(el);
+            }
+        });
+}
+
+
 function addYear(flag) {
     var s = document.forms[0].year;
     var val, o;
@@ -333,7 +360,7 @@ function fTabs() {
         if (dataTab == i) {
             var card = number[i];
             $(card).clone().appendTo(".img-card");
-            $(card).css('display','none');
+            $(card).css('display', 'none');
             $('div .back').css('display', 'block');
         }
 
@@ -357,48 +384,47 @@ function fTabs_2() {
 
 
 $.getJSON('goods.json', function (data) {
-    var goods=data;//все товары в массиве
+    var goods = data;//все товары в массиве
 
     checkCart();
     loadGoodsCart();
 
     function loadGoodsCart() {
         //загружаю товары на страницу
-        if($.isEmptyObject(cart)) {
+        if ($.isEmptyObject(cart)) {
             //Корзина пуста
-            var out='<div class="sad-icon"></div>' +
+            var out = '<div class="sad-icon"></div>' +
                 'Корзина пуста. Добавьте товар в корзину <br><a href="index.html">Главная страница</a>';
 
             $(".my-cart").html(out);
             $("#price").html('0');
             $(".price").html('');
-            $(".cost").css("display","none");
-            $(".form").css("display","none");
+            $(".cost").css("display", "none");
+            $(".form").css("display", "none");
         }
         else {
-            var out='';
-            var rezalt=[];
-            for(var key in cart)
-            {
-                out+='<div class="single-goods">';
-                out+='<p class="goods-header">'+key+'</p><span><button class="delete" data-art="' + key + '">✖</button></span>';
-                out+='<p>Цена: '+goods[key].cost+" $ / шт."+'</p>';
-                out+='<img src="'+goods[key].image+'">';
-                out +='<p></p>'+'<button class="minus" data-art="' + key + '">-</button>';
-                out+='<span class="outCount">'+cart[key]+'</span>';
-                out += '<span><button class="plus" data-art="' + key + '">+</button></span>'+'<p></p>';
-                out+='<p></p>'+'<span class="outText cost">'+goods[key].cost*cart[key]+'</span>';
-                out+='<p></p>'+'<span class="outText">'+goods[key].description+' '+
-                    '<span>'+goods[key].count+'</span>'+'</span>';
-                out+='</div>';
+            var out = '';
+            var rezalt = [];
+            for (var key in cart) {
+                out += '<div class="single-goods">';
+                out += '<p class="goods-header">' + key + '</p><span><button class="delete" data-art="' + key + '">✖</button></span>';
+                out += '<p>Цена: ' + goods[key].cost + " $ / шт." + '</p>';
+                out += '<img src="' + goods[key].image + '">';
+                out += '<p></p>' + '<button class="minus" data-art="' + key + '">-</button>';
+                out += '<span class="outCount">' + cart[key] + '</span>';
+                out += '<span><button class="plus" data-art="' + key + '">+</button></span>' + '<p></p>';
+                out += '<p></p>' + '<span class="outText cost">' + goods[key].cost * cart[key] + '</span>';
+                out += '<p></p>' + '<span class="outText">' + goods[key].description + ' ' +
+                    '<span>' + (goods[key].count-cart[key]) + '</span>' + '</span>';
+                out += '</div>';
 
                 p = goods[key].cost * cart[key];
                 rezalt.push(p);
             }
-            rezu=0;
-            for(var i=0;i<rezalt.length;i++)
-                rezu+=rezalt[i];
-                rezuk=rezu;
+            rezu = 0;
+            for (var i = 0; i < rezalt.length; i++)
+                rezu += rezalt[i];
+            rezuk = rezu;
 
             $(".my-cart").html(out);
             $(".plus").click(plusGoodsCart);
@@ -408,21 +434,20 @@ $.getJSON('goods.json', function (data) {
             $(".price").html(rezu);
         }
     }
+
     function plusGoodsCart() {
         //добавляем по 1 товару
         var counter;
-        var articul=$(this).attr('data-art');
+        var articul = $(this).attr('data-art');
         cart[articul]++;
-        $.getJSON('goods.json',function (data) {
-            for (var key in data)
-            {
-                counter=data[articul].count;
+        $.getJSON('goods.json', function (data) {
+            for (var key in data) {
+                counter = data[articul].count;
             }
 
-            if(counter<cart[articul])
-            {
+            if (counter < cart[articul]) {
                 alert("Вы выбрали больше дисков, чем на складе");
-                cart[articul]=counter;
+                cart[articul] = counter;
                 saveCartToLS();
                 loadGoodsCart();
                 showMiniCart();
@@ -435,8 +460,8 @@ $.getJSON('goods.json', function (data) {
 
     function minusGoodsCart() {
         //убираем по 1 товару
-        var articul=$(this).attr('data-art');
-        if(cart[articul]>1)
+        var articul = $(this).attr('data-art');
+        if (cart[articul] > 1)
             cart[articul]--;
         else
             delete cart[articul];
@@ -448,7 +473,7 @@ $.getJSON('goods.json', function (data) {
     function deleteGoods() {
         //удаляем товары
 
-        var articul=$(this).attr('data-art');
+        var articul = $(this).attr('data-art');
         delete cart[articul];
         saveCartToLS();
         loadGoodsCart();
@@ -457,7 +482,7 @@ $.getJSON('goods.json', function (data) {
 
     function s(cart) {
         var count = 0;
-        for(key in cart) {
+        for (key in cart) {
             count += cart[key];
         }
         return count;
@@ -466,25 +491,25 @@ $.getJSON('goods.json', function (data) {
 
 function showMiniCart() {
     var out = '';
-    var price='';
-    if (s(cart)<=100)
+    var price = '';
+    if (s(cart) <= 100)
         out += s(cart);
 
     else
-        out+="100+";
+        out += "100+";
 
     $('#mini-cart').html(out);
 }
 
 function checkCart() {
     //проверяет наличие корзины в localStorege
-    if(localStorage.getItem('cart')!=null)
-        cart=JSON.parse(localStorage.getItem('cart'));
+    if (localStorage.getItem('cart') != null)
+        cart = JSON.parse(localStorage.getItem('cart'));
 }
 
 function saveCartToLS() {
     //сохраняю корзину в localStorage
-    localStorage.setItem('cart',JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 /*Select Box js*/
@@ -502,3 +527,6 @@ $('.drop-menu .dropeddown li').click(function () {
     $(this).parents('.drop-menu').find('input').attr('value', $(this).text());
 });
 /*End Select Box js*/
+
+
+

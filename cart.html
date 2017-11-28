@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title>Internet-market Корзина</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css'>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/JavaScript.js" defer></script>
-    <script src="js/cart.js" defer></script>
 </head>
 <body>
 <div class="menu-top">
@@ -165,7 +163,8 @@
                     <img src="images/Oplata/Kredit/Alfa.png" alt="" class="alfa numberOplKredit">
                 </div>
                 <div class="kreditForm">
-                    <p class="order-heading">Паспортные данные</p>
+                    <p class="order-heading goods-header">Паспортные данные</p>
+                    <p class="sign">Дата рождения:</p>
                     <div class="drop-menu birth-date">
                         <div class="select">
                             <span>День</span>
@@ -229,34 +228,16 @@
                     </div>
                     <input type="text" placeholder="Год" class="birth-date">
                     <input type="text" placeholder="Серия и номер" required>
-                    <div class="CONTAINER">
-                        <div class="RangeSlider" id="RangeSlider">
-                            <div class="RangeSlider_ClickArea">
-                                <div class="RangeSlider_Track">
-                                    <div class="RangeSlider_TrackFill">
-                                        <div class="RangeSlider_Thumb"></div>
-                                    </div>
-                                </div>
-                                <div class="RangeSlider_Points">
-                                    <div class="RangeSlider_Point RangeSlider_PointActive">0</div>
-                                    <div class="RangeSlider_Point">6</div>
-                                    <div class="RangeSlider_Point">12</div>
-                                    <div class="RangeSlider_Point">18</div>
-                                    <div class="RangeSlider_Point">24</div>
-                                    <div class="RangeSlider_Point">30</div>
-                                    <div class="RangeSlider_Point">36</div>
-                                    <div class="RangeSlider_Point">42</div>
-                                    <div class="RangeSlider_Point">48</div>
-                                    <div class="RangeSlider_Point">54</div>
-                                    <div class="RangeSlider_Point">60</div>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="sign">Срок кредита(мес.):</p>
+
+                    <div class="wrap">
+                        <div id="slider"></div>
                     </div>
-                    <div>Первоначальный взнос:
+
+                    <div class="sign">Первоначальный взнос:
                         <span class="monye"></span>
                     </div>
-                    <div>Ежемесячный платеж:
+                    <div class="sign">Ежемесячный платеж:
                         <span class="monye"></span>
                     </div>
                 </div>
@@ -265,10 +246,15 @@
             <div class="order-cost">Стоимость заказа:
                 <span class="price cost"></span>
             </div>
-            <input class="curs otpravka price cost" type="submit" value="Подтвердите заказ">
+            <input class="curs otpravka" type="submit" value="Подтвердите заказ">
         </form>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src="js/JavaScript.js" defer></script>
+<script src="js/cart.js" defer></script>
 </body>
 </html>
