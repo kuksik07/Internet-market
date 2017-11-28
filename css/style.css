@@ -26,9 +26,25 @@ html, body {
 
 body {
     background: #f0f0f0 url("../images/disk_icon1.svg") repeat;
-    background-size: 10%;
+    background-size: 160px;
     background-attachment: fixed;
     font-family: "OpenSansRegular", sans-serif;
+}
+
+body:after{
+    content: "Авторы: Алексей Луковка и Олег Тюнин";
+    font-style: italic;
+    text-align: center;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    /*background-color: rgba(14, 17, 22, 1);*/
+    background: #000 url("../images/footer.jpg") center center no-repeat;
+    background-size: 500px auto;
+    background-position-y: -170px;
+    color: #fff;
+    font-size: 14px;
+
 }
 
 ul {
@@ -147,6 +163,19 @@ button {
     margin: 10px 0 10px 60px;
 }
 
+.basket a:before{
+    content: '\e809';
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+}
+
+
 .basket span {
     font-weight: bold;
 }
@@ -187,6 +216,11 @@ button {
     color: #000;
     font-weight: bold;
     border-bottom: 2px solid;
+}
+
+.brend-full{
+    width: 100%;
+    background: #fff;
 }
 
 .my-cart a:hover {
@@ -315,11 +349,14 @@ button {
 
 .minus, .plus, .delete {
     color: #ffc757;
-    font-weight: bold;
     font-size: 20px;
     line-height: 25px;
     height: 40px;
     width: 40px;
+}
+
+.minus, .plus{
+    font-size: 14px;
 }
 
 .delete {
@@ -473,7 +510,16 @@ button {
 }
 
 .drop-menu .select i:after {
-    content: 'Ў';
+    content: '\e805';
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
 }
 
 .drop-menu.active:hover,

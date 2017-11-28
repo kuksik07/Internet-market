@@ -330,28 +330,32 @@ function range() {
 }
 
 
-function addYear(flag) {
-    var s = document.forms[0].year;
-    var val, o;
-    if (flag) {
-        val = s.options[s.length - 1].value * 1 + 1;
-        o = new Option(val, val, false, true);
-        try {
-            s.add(o, null);
-        } catch (e) {
-            s.add(o);
-        }
+$(function () {
+    Data = new Date();
+    Year = Data.getFullYear();
+    Month = Data.getMonth();
+    Day = Data.getDate();
+
+// Преобразуем месяца
+    switch (Month)
+    {
+        case 0: fMonth="января"; break;
+        case 1: fMonth="февраля"; break;
+        case 2: fMonth="марта"; break;
+        case 3: fMonth="апреля"; break;
+        case 4: fMonth="мае"; break;
+        case 5: fMonth="июня"; break;
+        case 6: fMonth="июля"; break;
+        case 7: fMonth="августа"; break;
+        case 8: fMonth="сентября"; break;
+        case 9: fMonth="октября"; break;
+        case 10: fMonth="ноября"; break;
+        case 11: fMonth="декабря"; break;
     }
-    else {
-        val = s.options[0].value * 1 - 1;
-        o = new Option(val, val, false, true);
-        try {
-            s.add(o, s.options[0]);
-        } catch (e) {
-            s.add(o, 0);
-        }
-    }
-}
+
+// Вывод
+    document.getElementById('dateFolder').innerHTML = "Дата заказа: "+Day+" "+fMonth+" "+Year+" года";
+})
 
 function fTabs() {
     var number = $('.numberOpl');
@@ -407,12 +411,12 @@ $.getJSON('goods.json', function (data) {
             var rezalt = [];
             for (var key in cart) {
                 out += '<div class="single-goods">';
-                out += '<p class="goods-header">' + key + '</p><span><button class="delete" data-art="' + key + '">✖</button></span>';
+                out += '<p class="goods-header">' + key + '</p><span><button class="delete icon-cancel" data-art="' + key + '"></button></span>';
                 out += '<p>Цена: ' + goods[key].cost + " $ / шт." + '</p>';
                 out += '<img src="' + goods[key].image + '">';
-                out += '<p></p>' + '<button class="minus" data-art="' + key + '">-</button>';
+                out += '<p></p>' + '<button class="minus icon-minus" data-art="' + key + '"></button>';
                 out += '<span class="outCount">' + cart[key] + '</span>';
-                out += '<span><button class="plus" data-art="' + key + '">+</button></span>' + '<p></p>';
+                out += '<span><button class="plus icon-plus" data-art="' + key + '"></button></span>' + '<p></p>';
                 out += '<p></p>' + '<span class="outText cost">' + goods[key].cost * cart[key] + '</span>';
                 out += '<p></p>' + '<span class="outText">' + goods[key].description + ' ' +
                     '<span>' + (goods[key].count-cart[key]) + '</span>' + '</span>';
