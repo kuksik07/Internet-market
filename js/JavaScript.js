@@ -81,17 +81,17 @@ function loadGoods() {
             if (p === undefined) {
                 p = 'Кол-во';
 
-                out += '<div class="kolvo"><button class="minus" data-art="' + key + '">-</button>' +
+                out += '<div class="kolvo"><button class="minus icon-minus" data-art="' + key + '"></button>' +
                     '<span class="items">' + p + '</span>' +
-                    '<button class="plus" data-art="' + key + '">+</button></div>';
+                    '<button class="plus icon-plus" data-art="' + key + '"></button></div>';
                 out += '<button class="add-to-cart" data-art="' + key + '" >Купить</button>';
                 out += '<p></p>' + '<span class="outText">' + data[key].description +
                     '<span>' + data[key].count + '</span>' + '</p>';
             }
             else {
-                out += '<div class="kolvo"><button class="minus" data-art="' + key + '">-</button>' +
+                out += '<div class="kolvo"><button class="minus icon-minus" data-art="' + key + '"></button>' +
                     '<span class="items">' + p + '</span>' +
-                    '<button class="plus" data-art="' + key + '">+</button></div>';
+                    '<button class="plus icon-plus" data-art="' + key + '"></button></div>';
                 out += '<button class="add-to-cart" data-art="' + key + '" >Купить</button>';
                 out += '<p></p>' + '<span class="outText">' + data[key].description +
                     '<span>' + (data[key].count - p) + '</span>' + '</p>';

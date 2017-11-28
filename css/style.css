@@ -31,22 +31,6 @@ body {
     font-family: "OpenSansRegular", sans-serif;
 }
 
-body:after{
-    content: "Авторы: Алексей Луковка и Олег Тюнин";
-    font-style: italic;
-    text-align: center;
-    display: block;
-    width: 100%;
-    line-height: 60px;
-    /*background-color: rgba(14, 17, 22, 1);*/
-    background: #000 url("../images/footer.jpg") center center no-repeat;
-    background-size: 500px auto;
-    background-position-y: -170px;
-    color: #fff;
-    font-size: 14px;
-
-}
-
 ul {
     font-size: 0;
 }
@@ -81,6 +65,19 @@ button {
 .content-block {
     width: 1000px;
     margin: 0 auto;
+}
+
+.footer{
+    font-style: italic;
+    text-align: center;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    background: #000 url("../images/footer.jpg") center center no-repeat;
+    background-size: 500px auto;
+    background-position-y: -170px;
+    color: #fff;
+    font-size: 14px;
 }
 
 /*HEADER*/
