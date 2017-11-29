@@ -36,6 +36,7 @@
 </div>
 <<p class="goods-header cart-header">Корзина</p>
 <div class="content-block clearfix">
+
     <div class="my-cart"></div>
 
 </div>
@@ -43,7 +44,7 @@
 <div class="content-block">
     <div class="form">
         <p class="textForm outTextForm">Оформление заказа</p>
-        <form class="myForm" name="myForm" action="" onsubmit="return checkForm()">
+        <form class="myForm" name="myForm" action="good.html" onsubmit="return checkForm()">
             <div class="order-contact-info clearfix">
                 <div>
                     <input type="text" name="p4" id="txt1" class="inp" placeholder="Имя" required>
@@ -102,8 +103,7 @@
                     <div class="kartForm">
                         <!--<p class="selectForm right">Скрыть</p>-->
                         <div class="img-card"></div>
-                        <input type='text' id="txt_0" class='inp inpNumber' placeholder='Номер платежной карты'
-                               required>
+                        <input type='text' id="txt_0" class='inp inpNumber' placeholder='Номер платежной карты'>
                         <div></div>
                         <span class="term-heading">Срок действия</span>
                         <div class="drop-menu term">
@@ -130,7 +130,7 @@
                         <input type="text" placeholder="Год" class="term clearfix">
                         <div class="cvc">
                             <label class="selectFormP clearfix">CVV2/CVC2 код
-                                <input type="password" class='inputCVC' maxlength="3" required>
+                                <input type="password" class='inputCVC' maxlength="3">
                             </label>
                             <div class="CVC2">
                                 <button type="button" id="1" class="cvv2-key">1</button>
@@ -219,7 +219,7 @@
                         </ul>
                     </div>
                     <input type="text" placeholder="Год" class="birth-date">
-                    <input type="text" placeholder="Серия и номер" required>
+                    <input type="text" placeholder="Серия и номер">
                     <p class="sign">Срок кредита(мес.):</p>
 
                     <div class="wrap">

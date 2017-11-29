@@ -72,14 +72,18 @@ button {
     text-align: center;
     display: block;
     width: 100%;
-    line-height: 60px;
-    background: #000 url("../images/footer.jpg") center center no-repeat;
-    background-size: 500px auto;
-    background-position-y: -170px;
+    line-height: 100px;
+    background: #000 url("../images/Rolls-Royce-Ghost.png") center center no-repeat;
+    background-size: 380px auto;
+    background-position-y: -70px;
+    background-position-x: 550px;
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
 }
 
+.autori{
+    margin-left: 450px;
+}
 /*HEADER*/
 
 .menu-top {
@@ -382,6 +386,7 @@ button {
 
 .scroll-top {
     position: fixed;
+    display: none;
     right: 20px;
     bottom: calc(50% - 60px);
     z-index: 5;
@@ -402,6 +407,13 @@ button {
     height: 100px;
     margin: calc(50% - 280px) auto 20px;
     background: url("../images/sad.svg") no-repeat center;
+}
+
+.happy-icon{
+    width: 100px;
+    height: 100px;
+    margin: calc(50% - 280px) auto 20px;
+    background: url("../images/happy.svg") no-repeat center;
 }
 
 .cart-header {
